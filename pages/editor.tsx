@@ -16,7 +16,7 @@ export default function App(props: any) {
     downbutt.click()
   }
 
-  useEffect(async () => {
+  useEffect(() => {
     file ? null : router.push('/')
     const container = containerRef.current;
     let PSPDFKit: any;
@@ -37,8 +37,9 @@ export default function App(props: any) {
             const int8 = new Uint8Array(buffer)
             const blob = new Blob([buffer], { type: "application/pdf" });
             const fileName = "new-doc.pdf";
-            if (window.navigator.msSaveOrOpenBlob) {
-              window.navigator.msSaveOrOpenBlob(blob, fileName);
+            const nav = (window.navigator as any);
+            if (nav.msSaveOrOpenBlob) {
+              nav.msSaveOrOpenBlob(blob, fileName);
             } else {
               const b64 = Buffer.from(buffer).toString('base64');
               // let pdfbase64 = await btoa(String.fromCharCode.apply(null, int8 ))
