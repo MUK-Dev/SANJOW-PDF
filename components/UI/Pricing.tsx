@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import {
   Button,
   Heading,
@@ -8,9 +6,9 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 
-const Pricing: FC = () => {
-  return (
+const Pricing: FC = () => (
     <Stack w="100%" alignItems="center">
       <Stack
         boxShadow="0 4px 12px rgba(0,0,0,0.25)"
@@ -35,7 +33,6 @@ const Pricing: FC = () => {
         </UnorderedList>
       </Stack>
     </Stack>
-  );
-};
+);
 
 export default Pricing;

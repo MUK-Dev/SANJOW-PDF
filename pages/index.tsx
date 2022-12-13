@@ -1,23 +1,25 @@
-import { FC } from 'react';
-import { Button, Divider, Flex, Heading, Stack } from '@chakra-ui/react';
+import {
+  Button, Divider, Flex, Heading, Stack,
+} from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import React, { FC } from 'react';
 
-import Hero from '@UI/Hero';
+import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
 import Discover from '@UI/Discover';
-import UniquePoints from '@UI/UniquePoints';
+import EditAndConvert from '@UI/EditAndConvert';
+import Hero from '@UI/Hero';
 import Pricing from '@UI/Pricing';
 import Reassurance from '@UI/Reassurance';
+import UniquePoints from '@UI/UniquePoints';
 import WhoAreWe from '@UI/WhoAreWe';
-import Footer from '@Reuseables/Footer';
-import EditAndConvert from '@UI/EditAndConvert';
-import { useRouter } from 'next/router';
 
 interface Props {
   handleChange: React.ChangeEventHandler;
   children?: React.ReactNode;
 }
 
-const Landing: FC<Props> = props => {
+const Landing: FC<Props> = () => {
   const router = useRouter();
 
   return (

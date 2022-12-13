@@ -1,4 +1,6 @@
-import { Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import {
+  Flex, Heading, Image, Stack, Text,
+} from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface Props {
@@ -11,8 +13,7 @@ const Card: FC<Props> = ({
   title,
   description,
   path = '/assets/convert.png',
-}) => {
-  return (
+}) => (
     <Flex
       borderRadius={7}
       h="100%"
@@ -25,7 +26,6 @@ const Card: FC<Props> = ({
         <Text>{description}</Text>
       </Stack>
     </Flex>
-  );
-};
+);
 
 export default Card;

@@ -1,10 +1,10 @@
 import { Heading, Stack } from '@chakra-ui/react';
-import Header from '@Reuseables/Header';
-import PrivacyPolicies from '@UI/PrivacyPolicies';
 import React from 'react';
 
-const PrivacyPolicy = () => {
-  return (
+import Header from '@Reuseables/Header';
+import PrivacyPolicies from '@UI/PrivacyPolicies';
+
+const PrivacyPolicy = () => (
     <>
       <Stack className="bg-gradient-to-right">
         <Header />
@@ -14,7 +14,6 @@ const PrivacyPolicy = () => {
       </Stack>
       <PrivacyPolicies />
     </>
-  );
-};
+);
 
 export default PrivacyPolicy;

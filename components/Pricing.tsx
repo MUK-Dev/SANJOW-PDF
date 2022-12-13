@@ -1,13 +1,10 @@
+import { Heading, Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Heading, Stack } from '@chakra-ui/react';
-
-const Pricing: FC = () => {
-  return (
+const Pricing: FC = () => (
     <Stack>
       <Heading>Pricing</Heading>
     </Stack>
-  );
-};
+);
 
 export default Pricing;

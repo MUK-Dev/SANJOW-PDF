@@ -1,4 +1,3 @@
-import { FC, ReactNode } from 'react';
 import {
   Button,
   Divider,
@@ -9,6 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { FC, ReactNode } from 'react';
 
 interface Props {
   quote: ReactNode;
@@ -24,6 +24,7 @@ const Footer: FC<Props> = ({ quote }) => {
     });
   };
 
+  // eslint-disable-next-line no-console
   console.log(router.pathname);
 
   return (

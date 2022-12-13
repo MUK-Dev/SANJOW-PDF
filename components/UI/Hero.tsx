@@ -1,24 +1,8 @@
 import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Input,
-  Stack,
-  Text,
+  Button, Flex, Heading, Image, Stack,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import {
-  ChangeEventHandler,
-  DragEvent,
-  FC,
-  LegacyRef,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { FC } from 'react';
 
 const Hero: FC = () => {
   const router = useRouter();

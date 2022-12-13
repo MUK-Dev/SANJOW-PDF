@@ -9,16 +9,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 import {
-  ChangeEventHandler,
-  DragEvent,
-  FC,
-  LegacyRef,
-  useEffect,
-  useRef,
-  useState,
+  DragEvent, FC, useRef, useState,
 } from 'react';
 
 interface Props {
+  // eslint-disable-next-line no-unused-vars
   handleChange: (e: any) => void;
 }
 
@@ -28,6 +23,7 @@ const Hero: FC<Props> = ({ handleChange }) => {
 
   const handleDrop = (event: DragEvent) => {
     event.preventDefault();
+    // eslint-disable-next-line no-unused-expressions
     event.target;
     const e = {
       ...event,

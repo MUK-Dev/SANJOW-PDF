@@ -1,5 +1,7 @@
+import {
+  Button, Flex, Heading, Spacer, Stack, Text,
+} from '@chakra-ui/react';
 import { FC } from 'react';
-import { Button, Flex, Heading, Spacer, Stack, Text } from '@chakra-ui/react';
 
 const Footer: FC = () => {
   const scrollToTop = () => {

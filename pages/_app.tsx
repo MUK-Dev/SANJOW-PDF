@@ -2,23 +2,24 @@ import '../styles/globals.sass';
 import '../styles/index.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 import MainLayout from '../layouts/mainLayout';
 import theme from '../styles/theme';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [file, setFile] = useState();
 
   const handleChange = async (e: any) => {
+    // eslint-disable-next-line no-console
     console.log(e.target.files);
 
     setFile(e.target.files[0]);
-    let buffer = await e.target.files[0].arrayBuffer();
+    const buffer = await e.target.files[0].arrayBuffer();
     setFile(buffer);
-    router.push('/editor');
+    await router.push('/editor');
   };
 
   return (

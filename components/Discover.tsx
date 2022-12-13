@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import {
   Button,
   Flex,
@@ -7,10 +5,10 @@ import {
   GridItem,
   Heading,
   Image,
-  Spacer,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 
 const data = [
   {
@@ -62,13 +60,13 @@ const Discover: FC = () => {
         gap="2em"
         pb="2em"
       >
-        {data.slice(0, 3).map((item, i) => (
-          <GridItem key={i} w="100%">
+        {data.slice(0, 3).map((item, i1) => (
+          <GridItem key={i1} w="100%">
             <Stack gap="1em" alignItems="center">
               <Heading fontSize="2xl">{item.title}</Heading>
               <Stack>
-                {item.items.map((text, i) => (
-                  <Flex key={i} gap="1em" alignItems="center">
+                {item.items.map((text, i2) => (
+                  <Flex key={i2} gap="1em" alignItems="center">
                     <Image src={item.path} alt="Edit" w={50} h={50} />
                     <Text>{text}</Text>
                   </Flex>
@@ -84,13 +82,13 @@ const Discover: FC = () => {
         gap="2em"
         pb="2em"
       >
-        {data.slice(3, 5).map((item, i) => (
-          <GridItem key={i} w="100%">
+        {data.slice(3, 5).map((item, i1) => (
+          <GridItem key={i1} w="100%">
             <Stack gap="1em" alignItems="center">
               <Heading fontSize="2xl">{item.title}</Heading>
               <Stack>
-                {item.items.map((text, i) => (
-                  <Flex key={i} gap="1em" alignItems="center">
+                {item.items.map((text, i2) => (
+                  <Flex key={i2} gap="1em" alignItems="center">
                     <Image src={item.path} alt="Edit" w={50} h={50} />
                     <Text>{text}</Text>
                   </Flex>

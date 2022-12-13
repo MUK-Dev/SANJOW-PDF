@@ -1,22 +1,24 @@
-import { FC } from 'react';
-import { Button, Divider, Heading, Stack } from '@chakra-ui/react';
+import {
+  Button, Divider, Heading, Stack,
+} from '@chakra-ui/react';
+import React, { FC } from 'react';
 
+import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
-import LandingHero from '@UI/LandingHero';
-import HowItWorks from '@UI/HowItWorks';
 import Discover from '@UI/Discover';
-import UniquePoints from '@UI/UniquePoints';
+import HowItWorks from '@UI/HowItWorks';
+import LandingHero from '@UI/LandingHero';
 import Pricing from '@UI/Pricing';
 import Reassurance from '@UI/Reassurance';
+import UniquePoints from '@UI/UniquePoints';
 import WhoAreWe from '@UI/WhoAreWe';
-import Footer from '@Reuseables/Footer';
 
 interface Props {
   handleChange: React.ChangeEventHandler;
   children?: React.ReactNode;
 }
 
-const Landing: FC<Props> = props => {
+const Landing: FC<Props> = (props) => {
   const { handleChange } = props;
   const scrollToTop = () => {
     window.scrollTo({

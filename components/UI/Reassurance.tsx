@@ -1,4 +1,3 @@
-import { FC, useState } from 'react';
 import { StarIcon } from '@chakra-ui/icons';
 import {
   Avatar,
@@ -10,6 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useKeenSlider } from 'keen-slider/react';
+import { FC, useState } from 'react';
 import 'keen-slider/keen-slider.min.css';
 
 const data = [
@@ -34,9 +34,11 @@ const data = [
 ];
 
 const Reassurance: FC = () => {
+  // eslint-disable-next-line no-unused-vars
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     // initial: 0,
     slideChanged(slider) {
+      // eslint-disable-next-line no-use-before-define
       setCurrentSlide(slider.track.details.rel);
     },
     slides: {
@@ -44,6 +46,7 @@ const Reassurance: FC = () => {
       // spacing: 15,
     },
   });
+  // eslint-disable-next-line no-unused-vars
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
@@ -98,14 +101,14 @@ const Reassurance: FC = () => {
         alignItems="start"
         direction={{ base: 'column', md: 'row' }}
       >
-        {data.map(({ name, review, src }, i) => (
+        {data.map(({ name, review, src }, i1) => (
           // <Stack w="100%" className="keen-slider__slide">
-          <Stack key={i} w="100%">
+          <Stack key={i1} w="100%">
             <Box display="flex" mt="2" alignItems="center">
               {Array(5)
                 .fill('')
-                .map((_, i) => (
-                  <StarIcon key={i} color={i < 5 ? 'yellow.400' : 'gray.300'} />
+                .map((_, i2) => (
+                  <StarIcon key={i2} color={i2 < 5 ? 'yellow.400' : 'gray.300'} />
                 ))}
             </Box>
             <Text h="100%">{review}</Text>

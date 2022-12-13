@@ -1,8 +1,7 @@
 import { Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-const TermsAndConditions: FC = () => {
-  return (
+const TermsAndConditions: FC = () => (
     <Stack w="100%" py="1em" px={{ base: '1em', md: '2em' }} gap="1em">
       <Text>
         These general conditions of use are up to date as of 10/18/2022 <br />
@@ -424,7 +423,6 @@ const TermsAndConditions: FC = () => {
         court, the rules of the Code of Civil Procedure will apply.
       </Text>
     </Stack>
-  );
-};
+);
 
 export default TermsAndConditions;

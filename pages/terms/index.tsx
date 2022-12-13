@@ -1,10 +1,10 @@
 import { Heading, Stack } from '@chakra-ui/react';
-import Header from '@Reuseables/Header';
-import TermsAndConditions from '@UI/TermsAndConditions';
 import React from 'react';
 
-const Terms = () => {
-  return (
+import Header from '@Reuseables/Header';
+import TermsAndConditions from '@UI/TermsAndConditions';
+
+const Terms = () => (
     <>
       <Stack className="bg-gradient-to-right">
         <Header />
@@ -14,7 +14,6 @@ const Terms = () => {
       </Stack>
       <TermsAndConditions />
     </>
-  );
-};
+);
 
 export default Terms;

@@ -9,9 +9,10 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
-import { useRouter } from 'next/router';
 
 const SignUp = () => {
   const router = useRouter();

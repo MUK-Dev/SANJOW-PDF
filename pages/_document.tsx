@@ -6,6 +6,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document';
+
 import theme from '../styles/theme';
 
 class MyDocument extends Document {
@@ -13,6 +14,8 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx);
     return initialProps;
   }
+
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <Html>

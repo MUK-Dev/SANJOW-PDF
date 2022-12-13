@@ -1,11 +1,12 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef } from 'react';
-import axios from 'axios';
 
 export default function App(props: any) {
   const { file } = props;
   const router = useRouter();
   const containerRef = useRef(null);
+  // eslint-disable-next-line no-console
   console.log(file);
 
   const convertFunc = async (fileData: any) => {
@@ -13,16 +14,17 @@ export default function App(props: any) {
       'https://simplified-pdf.uc.r.appspot.com/api/convert-file',
       { filedata: fileData },
     );
-    let downbutt: any = document.getElementById('hidd-down');
-    downbutt.href =
-      (await 'data:application/msword;base64,') +
-      res?.data?.result?.document?.docData;
+    const downbutt: any = document.getElementById('hidd-down');
+    downbutt.href = (await 'data:application/msword;base64,')
+      // eslint-disable-next-line no-unsafe-optional-chaining
+      + res?.data?.result?.document?.docData;
     downbutt.download = 'response.doc';
     downbutt.target = '_self';
     downbutt.click();
   };
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
     file ? null : router.push('/');
     const container = containerRef.current;
     let PSPDFKit: any;
@@ -40,7 +42,7 @@ export default function App(props: any) {
         title: 'Convert',
         onPress: async () => {
           instance.exportPDF().then(async (buffer: any) => {
-            const int8 = new Uint8Array(buffer);
+            // const int8 = new Uint8Array(buffer);
             const blob = new Blob([buffer], { type: 'application/pdf' });
             const fileName = 'new-doc.pdf';
             const nav = window.navigator as any;
@@ -49,7 +51,7 @@ export default function App(props: any) {
             } else {
               const b64 = Buffer.from(buffer).toString('base64');
               // let pdfbase64 = await btoa(String.fromCharCode.apply(null, int8 ))
-              convertFunc(b64);
+              await convertFunc(b64);
             }
           });
         },
@@ -69,7 +71,7 @@ export default function App(props: any) {
     })();
 
     return () => PSPDFKit && PSPDFKit.unload(container);
-  }, []);
+  }, [file, router]);
 
   return (
     <>

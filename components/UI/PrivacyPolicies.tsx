@@ -1,8 +1,7 @@
 import { Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-const PrivacyPolicies: FC = () => {
-  return (
+const PrivacyPolicies: FC = () => (
     <Stack w="100%" py="1em" px={{ base: '1em', md: '2em' }} gap="1em">
       <Text>
         Eudialyte LTD is a company incorporated under Cyprus law registered with
@@ -87,7 +86,6 @@ const PrivacyPolicies: FC = () => {
         page.
       </Text>
     </Stack>
-  );
-};
+);
 
 export default PrivacyPolicies;

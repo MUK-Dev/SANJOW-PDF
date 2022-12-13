@@ -1,7 +1,9 @@
-import { Button, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import {
+  Button, Flex, Heading, Image, Stack, Text,
+} from '@chakra-ui/react';
 import { FC } from 'react';
 
-const HowItWorks: FC = ({}) => {
+const HowItWorks: FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
