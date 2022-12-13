@@ -1,16 +1,15 @@
 import { FC } from 'react';
-import { Button, Divider, Flex, Heading, Stack } from '@chakra-ui/react';
+import { Button, Divider, Heading, Stack } from '@chakra-ui/react';
 
-import Hero from '@UI/Hero';
 import Header from '@Reuseables/Header';
+import LandingHero from '@UI/LandingHero';
+import HowItWorks from '@UI/HowItWorks';
 import Discover from '@UI/Discover';
 import UniquePoints from '@UI/UniquePoints';
 import Pricing from '@UI/Pricing';
 import Reassurance from '@UI/Reassurance';
 import WhoAreWe from '@UI/WhoAreWe';
 import Footer from '@Reuseables/Footer';
-import EditAndConvert from '@UI/EditAndConvert';
-import { useRouter } from 'next/router';
 
 interface Props {
   handleChange: React.ChangeEventHandler;
@@ -18,46 +17,42 @@ interface Props {
 }
 
 const Landing: FC<Props> = props => {
-  const router = useRouter();
-
+  const { handleChange } = props;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <>
       <Stack className="bg-gradient-to-right">
         <Header />
-        <Hero />
+        <LandingHero handleChange={handleChange} />
       </Stack>
+      <HowItWorks />
       <Discover />
-      <EditAndConvert />
-      <UniquePoints showGradient={false} />
-      <Reassurance />
+      <UniquePoints />
       <Pricing />
+      <Reassurance />
       <WhoAreWe />
       <Footer
         quote={
           <>
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              w="100%"
-              pb="2em"
-              gap="2em"
-              px={{ base: '1em', md: '5em' }}
-              direction={{ base: 'column', md: 'row' }}
-            >
-              <Heading size="lg" py="1em">
-                Get more with premium and join The PDF software trusted by
-                thousands of users
+            <Stack alignItems="center" pb="2em" px={{ base: '1em', md: '5em' }}>
+              <Heading textAlign="center" fontStyle="italic" size="lg" py="1em">
+                Works with digital and scanned files. Get started and upload
+                your document to our online PDF editor and converter.
               </Heading>
               <Button
-                onClick={() => router.push('/landing')}
+                onClick={scrollToTop}
                 variant="outline"
                 color="white"
                 bgColor="#70e963"
-                px="3em"
               >
-                Start Now
+                Upload a PDF document
               </Button>
-            </Flex>
+            </Stack>
             <Divider borderWidth={1} borderColor="#7F90BB" />
           </>
         }

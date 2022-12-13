@@ -1,0 +1,18 @@
+body {
+  overflow-x: hidden;
+}
+
+* {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+button:hover {
+  background-color: #5dbf52 !important;
+}
+
+.bg-gradient-to-right {
+  /* background-image: linear-gradient(to right, #ecf0fb, #e9f3e5); */
+  background-image: url('/assets/Rectangle.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
