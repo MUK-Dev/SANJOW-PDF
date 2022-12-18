@@ -1,4 +1,6 @@
-import { Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import {
+  Grid, GridItem, Heading, Image, Stack, Text,
+} from '@chakra-ui/react';
 import { FC } from 'react';
 
 const EditAndConvert: FC = () => (

@@ -1,4 +1,6 @@
-import { Button, Divider, Heading, Stack } from '@chakra-ui/react';
+import {
+  Button, Divider, Heading, Stack,
+} from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 import Footer from '@Reuseables/Footer';
@@ -16,7 +18,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Landing: FC<Props> = props => {
+const Landing: FC<Props> = (props) => {
   const { handleChange } = props;
   const scrollToTop = () => {
     window.scrollTo({

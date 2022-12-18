@@ -9,7 +9,9 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { DragEvent, FC, useRef, useState } from 'react';
+import {
+  DragEvent, FC, useRef, useState,
+} from 'react';
 
 interface Props {
   // eslint-disable-next-line no-unused-vars
@@ -39,7 +41,7 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
       alignItems="center"
       // className="bg-gradient-to-right"
       direction={{ base: 'column', md: 'row' }}
-      onDrop={e => e.preventDefault()}
+      onDrop={(e) => e.preventDefault()}
     >
       <Stack flex={1} gap="1em">
         <Heading textAlign={{ base: 'center', md: 'left' }}>
@@ -71,11 +73,11 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
         flex={1}
         alignItems="center"
         w="100%"
-        onDragOver={e => {
+        onDragOver={(e) => {
           e.preventDefault();
           setHovering(true);
         }}
-        onDragLeave={e => {
+        onDragLeave={(e) => {
           e.preventDefault();
           setHovering(false);
         }}
@@ -111,7 +113,7 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
             </Stack>
             <Input
               type="file"
-              onChange={event => {
+              onChange={(event) => {
                 handleChange(event);
               }}
               ref={pickerRef}

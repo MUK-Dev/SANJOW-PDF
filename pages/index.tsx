@@ -9,8 +9,9 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import React, { FC, useRef, useState } from 'react';
+import React, {
+  ChangeEvent, FC, useRef, useState,
+} from 'react';
 
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
@@ -43,7 +44,7 @@ const Home: FC<Props> = ({ handleChange }) => {
         files: event?.dataTransfer?.files,
       },
     };
-    handleChange(e);
+    handleChange(e as unknown as ChangeEvent<Element>);
   };
 
   return (
@@ -94,15 +95,15 @@ const Home: FC<Props> = ({ handleChange }) => {
       />
       <Modal isOpen={showModal}>
         <Box
-          onDragOver={e => {
+          onDragOver={(e) => {
             e.preventDefault();
             setHovering(true);
           }}
-          onDragLeave={e => {
+          onDragLeave={(e) => {
             e.preventDefault();
             setHovering(false);
           }}
-          onDrop={handleDrop}
+          onDrop={(e) => handleDrop(e as any)}
           py="4rem"
           px="2em"
           border="2px solid rgba(127, 144, 187, 0.3)"
@@ -144,7 +145,7 @@ const Home: FC<Props> = ({ handleChange }) => {
             </Stack>
             <Input
               type="file"
-              onChange={event => {
+              onChange={(event) => {
                 handleChange(event);
               }}
               ref={pickerRef}

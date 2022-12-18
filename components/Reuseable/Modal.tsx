@@ -7,8 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Modal: FC<Props> = ({ isOpen, onClose, children }) =>
-  isOpen ? (
+const Modal: FC<Props> = ({ isOpen, children }) => (isOpen ? (
     <Flex
       justifyContent="center"
       alignItems="center"
@@ -23,6 +22,6 @@ const Modal: FC<Props> = ({ isOpen, onClose, children }) =>
         {children}
       </Box>
     </Flex>
-  ) : null;
+) : null);
 
 export default Modal;

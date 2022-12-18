@@ -1,4 +1,6 @@
-import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import {
+  Button, Flex, Heading, Image, Stack,
+} from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 interface Props {

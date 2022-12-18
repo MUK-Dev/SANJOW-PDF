@@ -14,10 +14,9 @@ export default function App(props: any) {
       { filedata: fileData },
     );
     const downbutt: any = document.getElementById('hidd-down');
-    downbutt.href =
-      (await 'data:application/msword;base64,') +
+    downbutt.href = (await 'data:application/msword;base64,')
       // eslint-disable-next-line no-unsafe-optional-chaining
-      res?.data?.result?.document?.docData;
+      + res?.data?.result?.document?.docData;
     downbutt.download = 'response.doc';
     downbutt.target = '_self';
     downbutt.click();
@@ -56,7 +55,7 @@ export default function App(props: any) {
           });
         },
       };
-      let defaultTools = PSPDFKit.defaultToolbarItems;
+      const defaultTools = PSPDFKit.defaultToolbarItems;
       defaultTools[7].icon = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve">
    <polygon points="222.031,490 267.969,490 267.969,267.969 490,267.969 490,222.031 267.969,222.031 267.969,0 222.031,0 

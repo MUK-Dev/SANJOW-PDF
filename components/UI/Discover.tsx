@@ -57,70 +57,78 @@ const data = [
 ];
 
 interface Props {
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Discover: FC<Props> = ({ setShowModal }) => (
-  <Stack
-    px={{ base: '1em', md: '5em' }}
-    py={{ base: '1em', md: '4em' }}
-    w="100%"
-    alignItems="center"
-  >
-    <Heading mb="2em">Discover all our tools</Heading>
-    <Grid
-      templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+const Discover: FC<Props> = ({ setShowModal }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  return (
+    <Stack
+      px={{ base: '1em', md: '5em' }}
+      py={{ base: '1em', md: '4em' }}
       w="100%"
-      gap="2em"
-      pb="2em"
+      alignItems="center"
     >
-      {data.slice(0, 3).map((item, i1) => (
-        <GridItem key={i1} w="100%">
-          <Stack gap="1em" alignItems="center">
-            <Heading fontSize="2xl">{item.title}</Heading>
-            <Stack>
-              {item.items.map(({ text, icon }, i2) => (
-                <Flex key={i2} gap="1em" alignItems="center">
-                  <Image src={icon} alt="Edit" />
-                  <Text>{text}</Text>
-                </Flex>
-              ))}
+      <Heading mb="2em">Discover all our tools</Heading>
+      <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+        w="100%"
+        gap="2em"
+        pb="2em"
+      >
+        {data.slice(0, 3).map((item, i1) => (
+          <GridItem key={i1} w="100%">
+            <Stack gap="1em" alignItems="center">
+              <Heading fontSize="2xl">{item.title}</Heading>
+              <Stack>
+                {item.items.map(({ text, icon }, i2) => (
+                  <Flex key={i2} gap="1em" alignItems="center">
+                    <Image src={icon} alt="Edit" />
+                    <Text>{text}</Text>
+                  </Flex>
+                ))}
+              </Stack>
             </Stack>
-          </Stack>
-        </GridItem>
-      ))}
-    </Grid>
-    <Grid
-      templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
-      w="100%"
-      gap="2em"
-      pb="2em"
-    >
-      {data.slice(3, 5).map((item, i1) => (
-        <GridItem key={i1} w="100%">
-          <Stack gap="1em" alignItems="center">
-            <Heading fontSize="2xl">{item.title}</Heading>
-            <Stack>
-              {item.items.map(({ text, icon }, i2) => (
-                <Flex key={i2} gap="1em" alignItems="center">
-                  <Image src={icon} alt="Edit" />
-                  <Text>{text}</Text>
-                </Flex>
-              ))}
+          </GridItem>
+        ))}
+      </Grid>
+      <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+        w="100%"
+        gap="2em"
+        pb="2em"
+      >
+        {data.slice(3, 5).map((item, i1) => (
+          <GridItem key={i1} w="100%">
+            <Stack gap="1em" alignItems="center">
+              <Heading fontSize="2xl">{item.title}</Heading>
+              <Stack>
+                {item.items.map(({ text, icon }, i2) => (
+                  <Flex key={i2} gap="1em" alignItems="center">
+                    <Image src={icon} alt="Edit" />
+                    <Text>{text}</Text>
+                  </Flex>
+                ))}
+              </Stack>
             </Stack>
-          </Stack>
-        </GridItem>
-      ))}
-    </Grid>
-    <Button
-      variant="outline"
-      color="black"
-      bgColor="#70e963"
-      onClick={() => setShowModal(true)}
-    >
-      Start Now
-    </Button>
-  </Stack>
-);
+          </GridItem>
+        ))}
+      </Grid>
+      <Button
+        variant="outline"
+        color="black"
+        bgColor="#70e963"
+        onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
+      >
+        Start Now
+      </Button>
+    </Stack>
+  );
+};
 
 export default Discover;
