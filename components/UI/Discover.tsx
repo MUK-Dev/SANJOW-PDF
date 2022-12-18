@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 const data = [
   {
@@ -56,76 +56,71 @@ const data = [
   },
 ];
 
-const Discover: FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+interface Props {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  return (
-    <Stack
-      px={{ base: '1em', md: '5em' }}
-      py={{ base: '1em', md: '4em' }}
+const Discover: FC<Props> = ({ setShowModal }) => (
+  <Stack
+    px={{ base: '1em', md: '5em' }}
+    py={{ base: '1em', md: '4em' }}
+    w="100%"
+    alignItems="center"
+  >
+    <Heading mb="2em">Discover all our tools</Heading>
+    <Grid
+      templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
       w="100%"
-      alignItems="center"
+      gap="2em"
+      pb="2em"
     >
-      <Heading mb="2em">Discover all our tools</Heading>
-      <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
-        w="100%"
-        gap="2em"
-        pb="2em"
-      >
-        {data.slice(0, 3).map((item, i1) => (
-          <GridItem key={i1} w="100%">
-            <Stack gap="1em" alignItems="center">
-              <Heading fontSize="2xl">{item.title}</Heading>
-              <Stack>
-                {item.items.map(({ text, icon }, i2) => (
-                  <Flex key={i2} gap="1em" alignItems="center">
-                    <Image src={icon} alt="Edit" />
-                    <Text>{text}</Text>
-                  </Flex>
-                ))}
-              </Stack>
+      {data.slice(0, 3).map((item, i1) => (
+        <GridItem key={i1} w="100%">
+          <Stack gap="1em" alignItems="center">
+            <Heading fontSize="2xl">{item.title}</Heading>
+            <Stack>
+              {item.items.map(({ text, icon }, i2) => (
+                <Flex key={i2} gap="1em" alignItems="center">
+                  <Image src={icon} alt="Edit" />
+                  <Text>{text}</Text>
+                </Flex>
+              ))}
             </Stack>
-          </GridItem>
-        ))}
-      </Grid>
-      <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
-        w="100%"
-        gap="2em"
-        pb="2em"
-      >
-        {data.slice(3, 5).map((item, i1) => (
-          <GridItem key={i1} w="100%">
-            <Stack gap="1em" alignItems="center">
-              <Heading fontSize="2xl">{item.title}</Heading>
-              <Stack>
-                {item.items.map(({ text, icon }, i2) => (
-                  <Flex key={i2} gap="1em" alignItems="center">
-                    <Image src={icon} alt="Edit" />
-                    <Text>{text}</Text>
-                  </Flex>
-                ))}
-              </Stack>
+          </Stack>
+        </GridItem>
+      ))}
+    </Grid>
+    <Grid
+      templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+      w="100%"
+      gap="2em"
+      pb="2em"
+    >
+      {data.slice(3, 5).map((item, i1) => (
+        <GridItem key={i1} w="100%">
+          <Stack gap="1em" alignItems="center">
+            <Heading fontSize="2xl">{item.title}</Heading>
+            <Stack>
+              {item.items.map(({ text, icon }, i2) => (
+                <Flex key={i2} gap="1em" alignItems="center">
+                  <Image src={icon} alt="Edit" />
+                  <Text>{text}</Text>
+                </Flex>
+              ))}
             </Stack>
-          </GridItem>
-        ))}
-      </Grid>
-      <Button
-        variant="outline"
-        color="white"
-        bgColor="#70e963"
-        onClick={scrollToTop}
-      >
-        Upload PDF to Convert
-      </Button>
-    </Stack>
-  );
-};
+          </Stack>
+        </GridItem>
+      ))}
+    </Grid>
+    <Button
+      variant="outline"
+      color="black"
+      bgColor="#70e963"
+      onClick={() => setShowModal(true)}
+    >
+      Start Now
+    </Button>
+  </Stack>
+);
 
 export default Discover;

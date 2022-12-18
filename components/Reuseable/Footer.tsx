@@ -7,6 +7,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
 
@@ -16,16 +17,6 @@ interface Props {
 
 const Footer: FC<Props> = ({ quote }) => {
   const router = useRouter();
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  // eslint-disable-next-line no-console
-  console.log(router.pathname);
 
   return (
     <Stack
@@ -49,28 +40,23 @@ const Footer: FC<Props> = ({ quote }) => {
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
           <Heading size="md">Quick Links</Heading>
-          <Button
-            onClick={
-              router.pathname === '/' ? scrollToTop : () => router.push('/')
-            }
-          >
-            Home
-          </Button>
-          <Button>Contact</Button>
-          <Button>Pricing</Button>
+          <Link href="/">Home</Link>
+          <Link href="mailto:contact@we-pdf.com">Contact</Link>
+          <Link href="#">Pricing</Link>
         </Stack>
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
           <Heading size="md">Services</Heading>
-          <Text>Edit PDF</Text>
-          <Text>Convert PDF to WORD</Text>
-          <Text>Convert PDF to JPEG</Text>
+          <Link href="/landing">Edit PDF</Link>
+          <Link href="/landing">Convert PDF to WORD</Link>
+          <Link href="/landing">Convert PDF to JPEG</Link>
         </Stack>
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
           <Heading size="md">Contact Info</Heading>
-          <Text>22-25 Portman Close, London, W1H 6BS</Text>
-          <Text>contact@pdf.com</Text>
+          <Text>Agiou Pavlous, 115, Agios Dometios, 2362,</Text>
+          <Text>Nicosia, Cyprus</Text>
+          <Text>contact@we-pdf.com</Text>
         </Stack>
         <Spacer />
         <Button
@@ -100,13 +86,10 @@ const Footer: FC<Props> = ({ quote }) => {
         <Flex
           gap={{ base: '0', md: '4em' }}
           direction={{ base: 'column', md: 'row' }}
+          color="#D9D9D9"
         >
-          <Button bgColor="transparent" onClick={() => router.push('/terms')}>
-            Terms & Conditions
-          </Button>
-          <Button bgColor="transparent" onClick={() => router.push('/policy')}>
-            Privacy Policy
-          </Button>
+          <Link href="/terms">Terms & Conditions</Link>
+          <Link href="/policy">Privacy Policy</Link>
         </Flex>
       </Flex>
     </Stack>

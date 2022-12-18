@@ -1,6 +1,4 @@
-import {
-  Button, Flex, Heading, Image, Stack, Text,
-} from '@chakra-ui/react';
+import { Button, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 const HowItWorks: FC = () => {
@@ -59,7 +57,7 @@ const HowItWorks: FC = () => {
       </Flex>
       <Button
         variant="outline"
-        color="white"
+        color="black"
         bgColor="#70e963"
         onClick={scrollToTop}
       >

@@ -1,6 +1,4 @@
-import {
-  Grid, GridItem, Heading, Image, Stack, Text,
-} from '@chakra-ui/react';
+import { Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 const EditAndConvert: FC = () => (
@@ -19,7 +17,9 @@ const EditAndConvert: FC = () => (
     gap="2em"
     className="bg-gradient-to-right"
   >
-    <Heading>Edit and convert your PDF in seconds</Heading>
+    <Heading textAlign={{ base: 'center', md: 'left' }}>
+      Edit and convert your PDF in seconds
+    </Heading>
     <Grid
       w="100%"
       templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)' }}

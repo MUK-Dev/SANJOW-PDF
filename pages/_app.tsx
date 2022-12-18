@@ -13,9 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [file, setFile] = useState();
 
   const handleChange = async (e: any) => {
-    // eslint-disable-next-line no-console
-    console.log(e.target.files);
-
     setFile(e.target.files[0]);
     const buffer = await e.target.files[0].arrayBuffer();
     setFile(buffer);

@@ -20,6 +20,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+  "linebreak-style": 0,
   "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
     "@typescript-eslint/no-empty-function": "error",
