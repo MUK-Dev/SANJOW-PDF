@@ -50,11 +50,11 @@ const Header: FC = () => {
         <Button
           variant="outline"
           borderWidth={2}
-          borderColor="#70e963"
-          color="#70e963"
+          borderColor="#FD900F"
+          color="#FD900F"
           _hover={{
-            borderColor: '#5DBF52',
-            color: '#5DBF52',
+            borderColor: '#e3830e',
+            color: '#e3830e',
             backgroundColor: 'transparent !important',
           }}
           onClick={() => router.push('/log-in')}

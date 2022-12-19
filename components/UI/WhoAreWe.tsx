@@ -57,8 +57,8 @@ const WhoAreWe: FC<Props> = ({ setShowModal }) => {
             </Text>
             <Button
               variant="outline"
-              color="black"
-              bgColor="#70e963"
+              color="white"
+              bgColor="#FD900F"
               onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
             >
               Start Now

@@ -21,7 +21,7 @@ const Pricing: FC = () => (
     >
       <Heading>$39.95</Heading>
       <Text>/month</Text>
-      <Button variant="outline" color="black" bgColor="#70e963">
+      <Button variant="outline" color="white" bgColor="#FD900F">
         Start Now
       </Button>
       <Heading fontSize="md">14-day trial for only $0.99</Heading>

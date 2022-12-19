@@ -25,7 +25,7 @@ const SignUp = () => {
         minHeight="70vh"
         justifyContent="center"
         alignItems="center"
-        pb={{ base: '3em', md: 0 }}
+        py='3em'
       >
         <Stack maxWidth="470px" alignItems="center">
           <Heading align="center" pb="0.5em">
@@ -71,7 +71,7 @@ const SignUp = () => {
             Already have an account? -{' '}
             <Link onClick={() => router.push('/log-in')}>Login</Link>
           </Text>
-          <Button variant="outline" color="black" bgColor="#70e963">
+          <Button variant="outline" color="white" bgColor="#e3830e">
             Create Account
           </Button>
         </Stack>

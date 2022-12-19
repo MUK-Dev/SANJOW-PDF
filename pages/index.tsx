@@ -82,8 +82,8 @@ const Home: FC<Props> = ({ handleChange }) => {
               <Button
                 onClick={() => setShowModal(true)}
                 variant="outline"
-                color="black"
-                bgColor="#70e963"
+                color="white"
+                bgColor="#FD900F"
                 px="3em"
               >
                 Start Now

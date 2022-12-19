@@ -121,8 +121,8 @@ const Discover: FC<Props> = ({ setShowModal }) => {
       </Grid>
       <Button
         variant="outline"
-        color="black"
-        bgColor="#70e963"
+        color="white"
+        bgColor="#FD900F"
         onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
       >
         Start Now

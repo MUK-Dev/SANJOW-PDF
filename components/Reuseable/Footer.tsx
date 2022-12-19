@@ -61,12 +61,12 @@ const Footer: FC<Props> = ({ quote }) => {
         <Spacer />
         <Button
           borderWidth={2}
-          borderColor="#70e963"
-          color="#70e963"
+          borderColor="#FD900F"
+          color="#FD900F"
           backgroundColor="transparent"
           _hover={{
-            borderColor: '#5DBF52',
-            color: '#5DBF52',
+            borderColor: '#e3830e',
+            color: '#e3830e',
             backgroundColor: 'transparent !important',
           }}
           onClick={() => router.push('/log-in')}

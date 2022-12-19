@@ -49,8 +49,8 @@ const Landing: FC<Props> = (props) => {
               <Button
                 onClick={scrollToTop}
                 variant="outline"
-                color="black"
-                bgColor="#70e963"
+                color="white"
+                bgColor="#e3830e"
               >
                 Upload a PDF document
               </Button>

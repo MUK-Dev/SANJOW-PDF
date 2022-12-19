@@ -59,8 +59,8 @@ const HowItWorks: FC = () => {
       </Flex>
       <Button
         variant="outline"
-        color="black"
-        bgColor="#70e963"
+        color="white"
+        bgColor="#e3830e"
         onClick={scrollToTop}
       >
         Upload a PDF document

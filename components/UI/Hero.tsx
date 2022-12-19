@@ -23,8 +23,8 @@ const Hero: FC<Props> = ({ setShowModal }) => (
       <Button
         onClick={() => setShowModal(true)}
         variant="outline"
-        color="black"
-        bgColor="#70e963"
+        color="white"
+        bgColor="#FD900F"
       >
         Start Now
       </Button>
