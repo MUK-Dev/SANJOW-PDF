@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { ToolbarItem } from 'pspdfkit';
 import React, { useEffect, useRef } from 'react';
 
 export default function App(props: any) {
@@ -24,7 +25,11 @@ export default function App(props: any) {
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    file ? null : router.push('/');
+    if (!file) {
+      router.push('/');
+      return;
+    }
+
     const container = containerRef.current;
     let PSPDFKit: any;
     let instance: any;
@@ -35,10 +40,11 @@ export default function App(props: any) {
         PSPDFKit.unload(container);
       }
 
-      const item = {
+      const item: ToolbarItem = {
         type: 'custom',
         id: 'convertButton',
-        title: 'Convert',
+        title: '✔ Convert',
+        className: 'bg-orange',
         onPress: async () => {
           instance.exportPDF().then(async (buffer: any) => {
             // const int8 = new Uint8Array(buffer);
@@ -91,7 +97,6 @@ export default function App(props: any) {
    <g>
    </g>
    </svg>
-   
    `;
 
       // defaultTools = defaultTools.map(item => {
@@ -117,20 +122,25 @@ export default function App(props: any) {
         toolbarItems: [...defaultTools, item, { type: 'content-editor' }],
       }).then((newInstance: any) => {
         // let items = newInstance.toolbarItems;
-        // items = items.map(i => {
+        // items = items.map((i) => {
         //   if (
-        //     i.type === 'note' ||
-        //     i.type === 'print' ||
-        //     i.type === 'search' ||
-        //     i.type === 'export-pdf'
-        //   )
-        //     return;
+        //     i.type === 'note'
+        //     || i.type === 'print'
+        //     || i.type === 'search'
+        //     || i.type === 'export-pdf'
+        //   ) { return; }
         //   return i;
         // });
         // console.log(items);
         // items.push(item);
         // items.push({ type: 'content-editor' });
         // newInstance.setToolbarItems(items);
+        const items = newInstance.toolbarItems;
+        items[19].title = 'Add Text';
+        // items[19].icon = '';
+        newInstance.setToolbarItems(items.filter((i: any) => (i.type !== 'export-pdf') && (i.type !== 'note')
+&& (i.type !== 'print') && (i.type !== 'search') && (i.type !== 'search')));
+        console.log(items);
         instance = newInstance;
       });
     })();

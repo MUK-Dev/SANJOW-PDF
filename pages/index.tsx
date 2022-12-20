@@ -134,8 +134,8 @@ const Home: FC<Props> = ({ handleChange }) => {
               </Flex>
               <Button
                 variant="outline"
-                color="black"
-                bgColor="#70e963"
+                color="white"
+                bgColor="#FD900F"
                 onClick={() => {
                   pickerRef?.current?.click();
                 }}

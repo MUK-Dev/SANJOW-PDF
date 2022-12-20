@@ -16,3 +16,13 @@ button:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.bg-orange {
+
+  background-color: #FD900F !important;
+}
+
+.PSPDFKit-Tool-Button {
+  background-color: #FD900F !important;
+
+}
