@@ -71,7 +71,7 @@ const SignUp = () => {
             Already have an account? -{' '}
             <Link onClick={() => router.push('/log-in')}>Login</Link>
           </Text>
-          <Button variant="outline" color="white" bgColor="#e3830e">
+          <Button variant="outline" color="white" bgColor="#FD900F">
             Create Account
           </Button>
         </Stack>

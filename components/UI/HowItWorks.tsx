@@ -60,7 +60,7 @@ const HowItWorks: FC = () => {
       <Button
         variant="outline"
         color="white"
-        bgColor="#e3830e"
+        bgColor="#FD900F"
         onClick={scrollToTop}
       >
         Upload a PDF document

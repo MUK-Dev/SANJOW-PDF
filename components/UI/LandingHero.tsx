@@ -103,7 +103,7 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
               <Button
                 variant="outline"
                 color="white"
-                bgColor="#e3830e"
+                bgColor="#FD900F"
                 onClick={() => {
                   pickerRef?.current?.click();
                 }}

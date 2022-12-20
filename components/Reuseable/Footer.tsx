@@ -3,6 +3,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Image,
   Spacer,
   Stack,
   Text,
@@ -36,7 +37,7 @@ const Footer: FC<Props> = ({ quote }) => {
         direction={{ base: 'column', md: 'row' }}
         gap="1em"
       >
-        <Heading size="lg">SANJOW PDF</Heading>
+        <Image src='/assets/we-pdflogo.png' alt='logo' h='3rem' />
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
           <Heading size="md">Quick Links</Heading>

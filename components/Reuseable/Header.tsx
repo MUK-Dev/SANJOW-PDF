@@ -6,7 +6,7 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
-  Heading,
+  Image,
   Spacer,
   Stack,
   useDisclosure,
@@ -40,7 +40,7 @@ const Header: FC = () => {
 
   return (
     <Flex as="nav" p="1em" alignItems="center">
-      <Heading size="lg">SANJOW PDF</Heading>
+      <Image src='/assets/we-pdflogo.png' alt='logo' h='3rem' />
       <Spacer />
       <Flex gap="1em" display={{ base: 'none', md: 'flex' }}>
         <Button backgroundColor="transparent" onClick={() => router.push('/')}>

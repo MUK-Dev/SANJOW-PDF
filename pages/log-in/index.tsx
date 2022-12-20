@@ -65,7 +65,7 @@ const Login = () => {
             Don't have an account? -{' '}
             <Link onClick={() => router.push('/sign-up')}>Sign up</Link>
           </Text>
-          <Button variant="outline" color="white" bgColor="#e3830e">
+          <Button variant="outline" color="white" bgColor="#FD900F">
             Log in
           </Button>
         </Stack>
