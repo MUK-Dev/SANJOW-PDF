@@ -12,6 +12,7 @@ import {
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import FilledBtn from '@Reuseables/FilledBtn';
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
 
@@ -65,9 +66,7 @@ const Login = () => {
             Don't have an account? -{' '}
             <Link onClick={() => router.push('/sign-up')}>Sign up</Link>
           </Text>
-          <Button variant="outline" color="white" bgColor="#FD900F">
-            Log in
-          </Button>
+          <FilledBtn>Log in</FilledBtn>
         </Stack>
       </Stack>
       <Footer quote={<></>} />

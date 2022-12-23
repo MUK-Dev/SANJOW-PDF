@@ -1,5 +1,4 @@
 import {
-  Button,
   Flex,
   Grid,
   GridItem,
@@ -9,6 +8,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 const data = [
   {
@@ -119,14 +120,11 @@ const Discover: FC<Props> = ({ setShowModal }) => {
           </GridItem>
         ))}
       </Grid>
-      <Button
-        variant="outline"
-        color="white"
-        bgColor="#FD900F"
+      <FilledBtn
         onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
       >
         Start Now
-      </Button>
+      </FilledBtn>
     </Stack>
   );
 };

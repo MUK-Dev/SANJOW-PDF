@@ -1,5 +1,4 @@
 import {
-  Button,
   Heading,
   ListItem,
   Stack,
@@ -7,6 +6,8 @@ import {
   UnorderedList,
 } from '@chakra-ui/react';
 import { FC } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 const Pricing: FC = () => (
   <Stack w="100%" alignItems="center">
@@ -21,9 +22,7 @@ const Pricing: FC = () => (
     >
       <Heading>$39.95</Heading>
       <Text>/month</Text>
-      <Button variant="outline" color="white" bgColor="#FD900F">
-        Start Now
-      </Button>
+      <FilledBtn>Start Now</FilledBtn>
       <Heading fontSize="md">14-day trial for only $0.99</Heading>
       <UnorderedList>
         <ListItem>Editing and convert</ListItem>

@@ -1,5 +1,4 @@
 import {
-  Button,
   Grid,
   GridItem,
   Heading,
@@ -8,6 +7,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 interface Props {
   setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -55,14 +56,11 @@ const WhoAreWe: FC<Props> = ({ setShowModal }) => {
               the ground up to be simple enough for anyone to use. And we love
               hearing from our customers about how much they love using us!
             </Text>
-            <Button
-              variant="outline"
-              color="white"
-              bgColor="#FD900F"
+            <FilledBtn
               onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
             >
               Start Now
-            </Button>
+            </FilledBtn>
           </Stack>
         </GridItem>
         <GridItem display={{ base: 'none', md: 'block' }}>

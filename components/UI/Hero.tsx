@@ -1,7 +1,9 @@
 import {
-  Button, Flex, Heading, Image, Stack,
+  Flex, Heading, Image, Stack,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 interface Props {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,14 +22,7 @@ const Hero: FC<Props> = ({ setShowModal }) => (
       <Heading textAlign={{ base: 'center', md: 'left' }}>
         Modify, convert and manage PDF documents online
       </Heading>
-      <Button
-        onClick={() => setShowModal(true)}
-        variant="outline"
-        color="white"
-        bgColor="#FD900F"
-      >
-        Start Now
-      </Button>
+      <FilledBtn onClick={() => setShowModal(true)}>Start now</FilledBtn>
     </Stack>
     <Stack flex={1} alignItems="center" w="100%">
       <Image src="/assets/Laptop.png" alt="laptop" />

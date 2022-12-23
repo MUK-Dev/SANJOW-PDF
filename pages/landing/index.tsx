@@ -1,8 +1,9 @@
 import {
-  Button, Divider, Heading, Stack,
+  Divider, Heading, Stack,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
+import FilledBtn from '@Reuseables/FilledBtn';
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
 import Discover from '@UI/Discover';
@@ -46,14 +47,7 @@ const Landing: FC<Props> = (props) => {
                 Works with digital and scanned files. Get started and upload
                 your document to our online PDF editor and converter.
               </Heading>
-              <Button
-                onClick={scrollToTop}
-                variant="outline"
-                color="white"
-                bgColor="#FD900F"
-              >
-                Upload a PDF document
-              </Button>
+              <FilledBtn onClick={scrollToTop}>Upload a PDF document</FilledBtn>
             </Stack>
             <Divider borderWidth={1} borderColor="#7F90BB" />
           </>

@@ -13,6 +13,7 @@ import React, {
   ChangeEvent, FC, useRef, useState,
 } from 'react';
 
+import FilledBtn from '@Reuseables/FilledBtn';
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
 import Modal from '@Reuseables/Modal';
@@ -79,15 +80,7 @@ const Home: FC<Props> = ({ handleChange }) => {
                 Get more with premium and join The PDF software trusted by
                 thousands of users
               </Heading>
-              <Button
-                onClick={() => setShowModal(true)}
-                variant="outline"
-                color="white"
-                bgColor="#FD900F"
-                px="3em"
-              >
-                Start Now
-              </Button>
+              <FilledBtn px="3em" onClick={() => setShowModal(true)} >Start Now</FilledBtn>
             </Flex>
             <Divider borderWidth={1} borderColor="#7F90BB" />
           </>
@@ -132,16 +125,13 @@ const Home: FC<Props> = ({ handleChange }) => {
                 <Text>OR</Text>
                 <Divider borderWidth={1} borderColor="black" flexGrow={1} />
               </Flex>
-              <Button
-                variant="outline"
-                color="white"
-                bgColor="#FD900F"
+              <FilledBtn
                 onClick={() => {
                   pickerRef?.current?.click();
                 }}
               >
                 Upload a PDF document
-              </Button>
+              </FilledBtn>
             </Stack>
             <Input
               type="file"

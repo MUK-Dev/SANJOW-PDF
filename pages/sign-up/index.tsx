@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
+import FilledBtn from '@Reuseables/FilledBtn';
 import Footer from '@Reuseables/Footer';
 import Header from '@Reuseables/Header';
 
@@ -71,9 +72,7 @@ const SignUp = () => {
             Already have an account? -{' '}
             <Link onClick={() => router.push('/log-in')}>Login</Link>
           </Text>
-          <Button variant="outline" color="white" bgColor="#FD900F">
-            Create Account
-          </Button>
+          <FilledBtn>Create Account</FilledBtn>
         </Stack>
       </Stack>
       <Footer quote={<></>} />

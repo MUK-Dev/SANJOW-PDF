@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Divider,
   Flex,
   Heading,
@@ -12,6 +11,8 @@ import {
 import {
   DragEvent, FC, useRef, useState,
 } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 interface Props {
   // eslint-disable-next-line no-unused-vars
@@ -100,16 +101,13 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
                 <Text>OR</Text>
                 <Divider borderWidth={1} borderColor="black" flexGrow={1} />
               </Flex>
-              <Button
-                variant="outline"
-                color="white"
-                bgColor="#FD900F"
+              <FilledBtn
                 onClick={() => {
                   pickerRef?.current?.click();
                 }}
               >
                 Upload a PDF document
-              </Button>
+              </FilledBtn>
             </Stack>
             <Input
               type="file"

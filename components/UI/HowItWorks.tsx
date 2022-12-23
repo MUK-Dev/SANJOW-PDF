@@ -1,7 +1,9 @@
 import {
-  Button, Flex, Heading, Image, Stack, Text,
+  Flex, Heading, Image, Stack, Text,
 } from '@chakra-ui/react';
 import { FC } from 'react';
+
+import FilledBtn from '@Reuseables/FilledBtn';
 
 const HowItWorks: FC = () => {
   const scrollToTop = () => {
@@ -57,14 +59,7 @@ const HowItWorks: FC = () => {
           </Text>
         </Stack>
       </Flex>
-      <Button
-        variant="outline"
-        color="white"
-        bgColor="#FD900F"
-        onClick={scrollToTop}
-      >
-        Upload a PDF document
-      </Button>
+      <FilledBtn onClick={scrollToTop} >Upload a PDF document</FilledBtn>
     </Stack>
   );
 };

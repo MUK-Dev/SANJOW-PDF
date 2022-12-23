@@ -1,5 +1,4 @@
 import {
-  Button,
   Divider,
   Flex,
   Heading,
@@ -11,6 +10,8 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
+
+import OutlinedBtn from './OutlinedBtn';
 
 interface Props {
   quote: ReactNode;
@@ -60,20 +61,7 @@ const Footer: FC<Props> = ({ quote }) => {
           <Text>contact@we-pdf.com</Text>
         </Stack>
         <Spacer />
-        <Button
-          borderWidth={2}
-          borderColor="#FD900F"
-          color="#FD900F"
-          backgroundColor="transparent"
-          _hover={{
-            borderColor: '#e3830e',
-            color: '#e3830e',
-            backgroundColor: 'transparent !important',
-          }}
-          onClick={() => router.push('/log-in')}
-        >
-          Log In
-        </Button>
+        <OutlinedBtn onClick={() => router.push('/log-in')} >Log In</OutlinedBtn>
       </Flex>
       <Divider borderWidth={1} borderColor="#7F90BB" />
       <Flex
