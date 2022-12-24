@@ -86,7 +86,7 @@ const Home: FC<Props> = ({ handleChange }) => {
           </>
         }
       />
-      <Modal isOpen={showModal}>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} >
         <Box
           onDragOver={(e) => {
             e.preventDefault();

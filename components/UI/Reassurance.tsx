@@ -33,7 +33,11 @@ const data = [
   },
 ];
 
-const Reassurance: FC = () => {
+interface Props {
+  className?: string;
+}
+
+const Reassurance: FC<Props> = ({ className = 'bg-gradient-to-right' }) => {
   // eslint-disable-next-line no-unused-vars
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     // initial: 0,
@@ -56,7 +60,7 @@ const Reassurance: FC = () => {
       py={{ base: '1em', md: '6em' }}
       px={{ base: '1em', md: '5em' }}
       pb={{ base: '3em', md: '2em' }}
-      className="bg-gradient-to-right"
+      className={className}
     >
       <style>{`
         .dot {

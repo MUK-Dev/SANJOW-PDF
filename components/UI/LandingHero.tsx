@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   Box,
   Divider,
@@ -15,7 +16,6 @@ import {
 import FilledBtn from '@Reuseables/FilledBtn';
 
 interface Props {
-  // eslint-disable-next-line no-unused-vars
   handleChange: (e: any) => void;
 }
 
