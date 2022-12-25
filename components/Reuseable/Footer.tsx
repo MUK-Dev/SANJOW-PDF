@@ -63,7 +63,7 @@ const Footer: FC<Props> = ({ quote }) => {
         <Spacer />
         <OutlinedBtn onClick={() => router.push('/log-in')} >Log In</OutlinedBtn>
       </Flex>
-      <Divider borderWidth={1} borderColor="#7F90BB" />
+      <Divider borderWidth={1} borderColor="#D9D9D9" />
       <Flex
         justifyContent="space-between"
         alignItems={{ base: 'center', md: 'flex-start' }}
@@ -75,7 +75,6 @@ const Footer: FC<Props> = ({ quote }) => {
         <Flex
           gap={{ base: '0', md: '4em' }}
           direction={{ base: 'column', md: 'row' }}
-          color="#D9D9D9"
         >
           <Link href="/terms">Terms & Conditions</Link>
           <Link href="/policy">Privacy Policy</Link>

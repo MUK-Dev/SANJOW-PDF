@@ -58,7 +58,7 @@ const Home: FC<Props> = ({ handleChange }) => {
       <EditAndConvert />
       <UniquePoints showGradient={false} />
       <Reassurance />
-      <Pricing />
+      <Pricing setShowModal={setShowModal} />
       <WhoAreWe setShowModal={setShowModal} />
       <Footer
         quote={
@@ -82,7 +82,7 @@ const Home: FC<Props> = ({ handleChange }) => {
               </Heading>
               <FilledBtn px="3em" onClick={() => setShowModal(true)} >Start Now</FilledBtn>
             </Flex>
-            <Divider borderWidth={1} borderColor="#7F90BB" />
+            <Divider borderWidth={1} borderColor="#D9D9D9" />
           </>
         }
       />

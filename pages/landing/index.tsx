@@ -49,7 +49,7 @@ const Landing: FC<Props> = (props) => {
               </Heading>
               <FilledBtn onClick={scrollToTop}>Upload a PDF document</FilledBtn>
             </Stack>
-            <Divider borderWidth={1} borderColor="#7F90BB" />
+            <Divider borderWidth={1} borderColor="#D9D9D9" />
           </>
         }
       />
