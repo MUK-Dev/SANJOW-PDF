@@ -4,6 +4,7 @@ import { FC, ReactNode } from 'react';
 interface Props extends ChakraProps {
   children: ReactNode;
   onClick?: () => void;
+  disabled: boolean;
 }
 
 const OutlinedBtn: FC<Props> = ({ children, onClick, ...rest }) => (

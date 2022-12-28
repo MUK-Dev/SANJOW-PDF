@@ -7,6 +7,10 @@ import {
   DrawerOverlay,
   Flex,
   Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Spacer,
   Stack,
   useDisclosure,
@@ -36,7 +40,9 @@ const Header: FC = () => {
               Home
             </Button>
             <Button backgroundColor="transparent">Contact</Button>
-            <OutlinedBtn onClick={() => router.push('/log-in')} >Login</OutlinedBtn>
+            <OutlinedBtn onClick={() => router.push('/log-in')}>
+              Login
+            </OutlinedBtn>
           </Stack>
         </DrawerBody>
       </DrawerContent>
@@ -52,7 +58,34 @@ const Header: FC = () => {
           Home
         </Button>
         <Button backgroundColor="transparent">Contact</Button>
-        <OutlinedBtn onClick={() => router.push('/log-in')} >Login</OutlinedBtn>
+        <OutlinedBtn onClick={() => router.push('/log-in')}>Login</OutlinedBtn>
+        <Menu>
+          <MenuButton
+            px="2em"
+            borderRadius="0.375rem"
+            _hover={{
+              borderColor: '#e3830e',
+              color: '#e3830e',
+              backgroundColor: 'transparent !important',
+            }}
+          >
+            Oliver L.
+          </MenuButton>
+          <MenuList>
+            <MenuItem>
+              <Image src="/assets/header/avatar.png" alt="avatar" pr="0.5em" />
+              Profile
+            </MenuItem>
+            <MenuItem>
+              <Image src="/assets/docs/doc.png" alt="doc" pr="0.5em" />
+              Your documents
+            </MenuItem>
+            <MenuItem>
+              <Image src="/assets/header/logout.png" alt="logout" pr="0.5em" />
+              Logout
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
       <DrawerButton onClick={onOpen} isOpen={isOpen} />
       {drawer}

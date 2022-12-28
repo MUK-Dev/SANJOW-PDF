@@ -7,6 +7,7 @@ import {
   Image,
   Radio,
   RadioGroup,
+  Spinner,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -24,20 +25,42 @@ export default function App(props: any) {
   const router = useRouter();
   const containerRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-  const [radioVal, setRadioVal] = useState('pdf');
+  const [radioVal, setRadioVal] = useState('none');
   const [instance, setInstance] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
   // eslint-disable-next-line no-console
 
   const convertFunc = async (fileData: any, fileType: string) => {
-    const res = await axios.post(
-      'https://simplified-pdf.uc.r.appspot.com/api/convert-file',
-      { filedata: fileData },
-    );
-    const downbutt: any = document.getElementById('hidd-down');
-    downbutt.href = await `data:application/${fileType};base64,` + res?.data?.result?.document?.docData;
-    downbutt.download = 'response.doc';
-    downbutt.target = '_self';
-    downbutt.click();
+    setIsLoading(true);
+    try {
+      const res = await axios.post(
+        'https://simplified-pdf.uc.r.appspot.com/api/convert-file',
+        { filedata: fileData, outputform: fileType },
+      );
+      const downbutt: any = document.getElementById('hidd-down');
+      if (fileType === 'docX') {
+        downbutt.href = (await 'data:application/msword;base64,')
+          + res?.data?.result?.document?.docData;
+        downbutt.download = 'response.doc';
+      } else if (fileType === 'pptx') {
+        downbutt.href = (await 'data:application/vnd.openxmlformats-officedocument.presentationml.presentation;base64,')
+          + res?.data?.result?.document?.docData;
+        downbutt.download = 'response.pptx';
+      } else if (fileType === 'excel') {
+        downbutt.href = (await 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,')
+          + res?.data?.result?.document?.docData;
+        downbutt.download = 'response.xlsx';
+      } else {
+        downbutt.href = (await 'data:application/pdf;base64,')
+          + res?.data?.result?.document?.docData;
+        downbutt.download = 'response.pdf';
+      }
+      downbutt.target = '_self';
+      downbutt.click();
+      setIsLoading(false);
+    } catch (e) {
+      setIsLoading(false);
+    }
   };
 
   const runDownload = async () => {
@@ -47,7 +70,6 @@ export default function App(props: any) {
       const blob = new Blob([buffer], { type: 'application/pdf' });
       const fileName = 'new-doc.pdf';
       const nav = window.navigator as any;
-      console.log(buffer);
       if (nav.msSaveOrOpenBlob) {
         nav.msSaveOrOpenBlob(blob, fileName);
       } else {
@@ -189,26 +211,34 @@ export default function App(props: any) {
             <Text fontSize="sm" textAlign="center">
               Your file is ready
             </Text>
-            <RadioGroup onChange={setRadioVal} value={radioVal} >
-
-            <Grid templateColumns="repeat(2,1fr)" gap="1em" py="1em">
-              <GridItem>
-                <Radio value="pdf">PDF</Radio>
-              </GridItem>
-              <GridItem>
-                <Radio value="docx">DOCX</Radio>
-              </GridItem>
-              <GridItem>
-                <Radio value="jpeg">JPEG</Radio>
-              </GridItem>
-              <GridItem>
-                <Radio value="doc">DOC</Radio>
-              </GridItem>
-            </Grid>
+            <RadioGroup onChange={setRadioVal} value={radioVal}>
+              <Grid templateColumns="repeat(2,1fr)" gap="1em" py="1em">
+                <GridItem>
+                  <Radio value="none">PDF</Radio>
+                </GridItem>
+                <GridItem>
+                  <Radio value="docX">DOCX</Radio>
+                </GridItem>
+                <GridItem>
+                  <Radio value="pptx">PPT</Radio>
+                </GridItem>
+                <GridItem>
+                  <Radio value="excel">Excel</Radio>
+                </GridItem>
+              </Grid>
             </RadioGroup>
             <Flex gap="1em">
-              <OutlinedBtn onClick={() => setShowModal(false)} >Cancel</OutlinedBtn>
-              <FilledBtn onClick={runDownload} >Download</FilledBtn>
+              <OutlinedBtn
+              w='100%'
+               flexGrow={1}
+                onClick={() => setShowModal(false)}
+                disabled={isLoading}
+              >
+                Cancel
+              </OutlinedBtn>
+              <FilledBtn w='100%' onClick={runDownload} disabled={isLoading}>
+                {isLoading ? <Spinner /> : 'Download'}
+              </FilledBtn>
             </Flex>
           </Stack>
         </Modal>

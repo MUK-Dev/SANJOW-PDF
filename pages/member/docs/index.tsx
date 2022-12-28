@@ -46,8 +46,8 @@ const Docs: FC<Props> = ({ handleChange }) => {
       <Box className="bg-gradient-to-right">
         <Header />
       </Box>
-      <Flex minH="70vh" px="1em" justifyContent="center" alignItems="center">
-        <Stack alignItems="flex-start" w={{ base: '100%', md: '80%' }}>
+      <Flex minH="70vh" px="1em" justifyContent="center" alignItems="center" py='6em' >
+        <Stack alignItems="flex-start" w={{ base: '100%', md: '80%' }} >
           <Heading fontSize="3xl">Your documents</Heading>
           <Stack pb="0.5em" alignItems="flex-end" w="100%">
             <OutlinedBtn onClick={() => setShowModal(true)}>
@@ -61,7 +61,7 @@ const Docs: FC<Props> = ({ handleChange }) => {
                 justifyContent="space-between"
                 w="100%"
                 px="2em"
-                py="0.5em"
+                py="1em"
               >
                 <Flex gap="1em">
                   <Image src="/assets/docs/doc.png" alt="doc" />

@@ -12,10 +12,10 @@ const Member: FC = () => (
     <Box className="bg-gradient-to-right">
       <Header />
     </Box>
-    <Flex minH="70vh" px='1em' justifyContent="center" alignItems="center">
+    <Flex minH="70vh" px="1em" justifyContent="center" alignItems="center">
       <Box
         border="4px solid rgba(127, 144, 187, 1)"
-        w={{ base: '100%', md: '80%' }}
+        w={{ base: '100%', md: '50%' }}
         borderRadius={8}
         p="4rem 2rem"
       >
