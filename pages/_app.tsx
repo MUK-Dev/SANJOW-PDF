@@ -11,9 +11,11 @@ import theme from '../styles/theme';
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [file, setFile] = useState();
+  const [fileName, setFileName] = useState('');
 
   const handleChange = async (e: any) => {
     setFile(e.target.files[0]);
+    setFileName(e.target.files[0].name.split('.')[0]);
     const buffer = await e.target.files[0].arrayBuffer();
     setFile(buffer);
     await router.push('/editor');
@@ -22,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <MainLayout>
-        <Component {...pageProps} handleChange={handleChange} file={file} />
+        <Component {...pageProps} handleChange={handleChange} file={file} fileName={fileName} />
       </MainLayout>
     </ChakraProvider>
   );

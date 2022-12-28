@@ -21,7 +21,7 @@ import Modal from '@Reuseables/Modal';
 import OutlinedBtn from '@Reuseables/OutlinedBtn';
 
 export default function App(props: any) {
-  const { file } = props;
+  const { file, fileName: fName } = props;
   const router = useRouter();
   const containerRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
@@ -41,19 +41,19 @@ export default function App(props: any) {
       if (fileType === 'docX') {
         downbutt.href = (await 'data:application/msword;base64,')
           + res?.data?.result?.document?.docData;
-        downbutt.download = 'response.doc';
+        downbutt.download = `${fName}.doc`;
       } else if (fileType === 'pptx') {
         downbutt.href = (await 'data:application/vnd.openxmlformats-officedocument.presentationml.presentation;base64,')
           + res?.data?.result?.document?.docData;
-        downbutt.download = 'response.pptx';
+        downbutt.download = `${fName}.pptx`;
       } else if (fileType === 'excel') {
         downbutt.href = (await 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,')
           + res?.data?.result?.document?.docData;
-        downbutt.download = 'response.xlsx';
+        downbutt.download = `${fName}.xlsx`;
       } else {
         downbutt.href = (await 'data:application/pdf;base64,')
           + res?.data?.result?.document?.docData;
-        downbutt.download = 'response.pdf';
+        downbutt.download = `${fName}.pdf`;
       }
       downbutt.target = '_self';
       downbutt.click();
