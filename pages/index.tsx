@@ -24,15 +24,17 @@ import Pricing from '@UI/Pricing';
 import Reassurance from '@UI/Reassurance';
 import UniquePoints from '@UI/UniquePoints';
 import WhoAreWe from '@UI/WhoAreWe';
+import useEditor from 'hooks/useEditor';
 
 interface Props {
   handleChange: React.ChangeEventHandler;
   children?: React.ReactNode;
 }
 
-const Home: FC<Props> = ({ handleChange }) => {
+const Home: FC<Props> = () => {
   const [showModal, setShowModal] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const { handleChange } = useEditor();
 
   const pickerRef = useRef<any>();
 
@@ -45,7 +47,7 @@ const Home: FC<Props> = ({ handleChange }) => {
         files: event?.dataTransfer?.files,
       },
     };
-    handleChange(e as unknown as ChangeEvent<Element>);
+    handleChange?.(e as unknown as ChangeEvent<Element>);
   };
 
   return (
@@ -136,7 +138,7 @@ const Home: FC<Props> = ({ handleChange }) => {
             <Input
               type="file"
               onChange={(event) => {
-                handleChange(event);
+                handleChange?.(event);
               }}
               ref={pickerRef}
               display="none"

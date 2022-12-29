@@ -11,7 +11,7 @@ const TermsAndConditions: FC = () => (
     </Text>
     <Text>1. OBJECT</Text>
     <Text>
-      NAME provides its Members with a document converter service at{' '}
+      We PDF provides its Members with a document converter service at{' '}
       <Link href="https://we-pdf.com">we-pdf.com</Link>, which companies and
       individuals can use on their own responsibility.
       <br />
@@ -20,7 +20,7 @@ const TermsAndConditions: FC = () => (
       <br />
       When registering on the Site, you will be invited to tick a box confirming
       that you have read and accept the T & Cs, which will form a valid contract
-      between you and NAME.
+      between you and We PDF.
       <br />
       For the purposes of these T & Cs, terms entirely in capital letters or
       with the first letter in capital letters, whether used in the singular or
@@ -119,7 +119,7 @@ const TermsAndConditions: FC = () => (
       You can unlimitedly convert multiple document formats to PDF such as Word,
       Excel, Powerpoint, JPEG and vice versa.
       <br />
-      You can communicate and exchange withNAME by email and chat.
+      You can communicate and exchange with We PDF by email and chat.
       <br />
       You can upload your documents.
       <br />
@@ -138,12 +138,12 @@ const TermsAndConditions: FC = () => (
       <br />
       Compress a PDF document
       <br />
-      All the services mentioned above are only available to Members of NAME,
+      All the services mentioned above are only available to Members of We PDF,
       which results in the subscription to our Subscription plan.
     </Text>
     <Text>5. SUBSCRIPTION TO SERVICES ON THE SITE AND SUBSCRIPTION</Text>
     <Text>
-      All the Services offered by NAME are described with the greatest possible
+      All the Services offered by We PDF are described with the greatest possible
       accuracy above. We reserve the right to modify the content on the Site at
       any time without having to notify Members.
       <br />
@@ -187,12 +187,12 @@ const TermsAndConditions: FC = () => (
       <br />
       The Trial Period as well as the Subscription are payable in advance
       through a direct debit from the payment method indicated on the Site.
-      IfNAME observes a payment default on the part of the Member, we will
-      represent the payment. In the event of a new payment default,NAME reserves
+      If We PDF observes a payment default on the part of the Member, we will
+      represent the payment. In the event of a new payment default, We PDF reserves
       the right to terminate the Services from which the Member benefits,
       without compensation at his expense, but without prejudice to the option
       left to him to claim payment of the sums due from the Member. and all the
-      repairs of whichNAME considers itself a victim.
+      repairs of which We PDF considers itself a victim.
       <br />
       The PDF Converter uses a service provider specializing in securing online
       payments to guarantee the security of payments in place on the Site. The
@@ -239,7 +239,7 @@ const TermsAndConditions: FC = () => (
       To use the Website in a legal manner, and more generally not to do
       anything that may be contrary to Applicable Laws and these GTCS.
       <br />
-      Not to infringe the rights of NAME and its Affiliates, in particular its
+      Not to infringe the rights of We PDF and its Affiliates, in particular its
       intellectual property rights.
       <br />
       Not to attempt to gain unauthorized access to the website’s computer
@@ -380,7 +380,7 @@ const TermsAndConditions: FC = () => (
     </Text>
     <Text>14. INTELLECTUAL PROPERTY</Text>
     <Text>
-      This Site is operated by NAME and its affiliates.
+      This Site is operated by We PDF and its affiliates.
       <br />
       Elements such as logos, brands, trade names, images, texts, illustrations,
       audio files, video files as well as the selection, coordination and

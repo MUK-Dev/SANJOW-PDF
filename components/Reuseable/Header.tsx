@@ -15,6 +15,7 @@ import {
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
@@ -53,16 +54,15 @@ const Header: FC = () => {
     <Flex as="nav" p="1em" alignItems="center">
       <Image src="/assets/we-pdflogo.png" alt="logo" h="3rem" />
       <Spacer />
-      <Flex gap="1em" display={{ base: 'none', md: 'flex' }}>
-        <Button backgroundColor="transparent" onClick={() => router.push('/')}>
-          Home
-        </Button>
-        <Button backgroundColor="transparent">Contact</Button>
+      <Flex gap="2em" display={{ base: 'none', md: 'flex' }} alignItems='center' color='#FD900F' >
+        <Link href='/' >Home</Link>
+        <Link href='/' >Contact</Link>
         <OutlinedBtn onClick={() => router.push('/log-in')}>Login</OutlinedBtn>
         <Menu>
           <MenuButton
             px="2em"
             borderRadius="0.375rem"
+            color='black'
             _hover={{
               borderColor: '#e3830e',
               color: '#e3830e',
@@ -71,7 +71,7 @@ const Header: FC = () => {
           >
             Oliver L.
           </MenuButton>
-          <MenuList>
+          <MenuList color='black'>
             <MenuItem>
               <Image src="/assets/header/avatar.png" alt="avatar" pr="0.5em" />
               Profile

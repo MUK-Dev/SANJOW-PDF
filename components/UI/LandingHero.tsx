@@ -16,7 +16,7 @@ import {
 import FilledBtn from '@Reuseables/FilledBtn';
 
 interface Props {
-  handleChange: (e: any) => void;
+  handleChange?: (e: any) => Promise<void>;
 }
 
 const LandingHero: FC<Props> = ({ handleChange }) => {
@@ -32,7 +32,7 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
         files: event.dataTransfer.files,
       },
     };
-    handleChange(e);
+    handleChange?.(e);
   };
 
   return (
@@ -112,7 +112,7 @@ const LandingHero: FC<Props> = ({ handleChange }) => {
             <Input
               type="file"
               onChange={(event) => {
-                handleChange(event);
+                handleChange?.(event);
               }}
               ref={pickerRef}
               display="none"

@@ -13,14 +13,15 @@ import Pricing from '@UI/Pricing';
 import Reassurance from '@UI/Reassurance';
 import UniquePoints from '@UI/UniquePoints';
 import WhoAreWe from '@UI/WhoAreWe';
+import useEditor from 'hooks/useEditor';
 
 interface Props {
   handleChange: React.ChangeEventHandler;
   children?: React.ReactNode;
 }
 
-const Landing: FC<Props> = (props) => {
-  const { handleChange } = props;
+const Landing: FC<Props> = () => {
+  const { handleChange } = useEditor();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
