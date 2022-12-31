@@ -132,6 +132,14 @@ export default function App() {
         }],
       }).then((newInstance: any) => {
         const items = newInstance.toolbarItems;
+        console.log(items);
+        items.splice(11, 0, items[35]);
+        items.pop();
+        items.splice(12, 0, items[20]);
+        items.splice(20, 1);
+        items.splice(14, 0, items[21]);
+        items.splice(21, 1);
+
         items[19].title = 'Add Text';
         newInstance.setToolbarItems(
           items.filter(

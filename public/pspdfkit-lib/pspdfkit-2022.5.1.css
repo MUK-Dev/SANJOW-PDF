@@ -130,11 +130,11 @@
 .bg-orange {background-color: #FD900F !important; color: white}
 .bg-orange:hover {background-color: #e3830e !important; color: white}
 /* .edit-text{flex: 40px 0 0 !important; } */
-.PSPDFKit-Icon-ContentEditor{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
-.PSPDFKit-Icon-Ink{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
+.PSPDFKit-Icon-ContentEditor{flex: 45px 0 0 !important; height: 40px !important; padding: 5px 4px !important; }
+.PSPDFKit-Icon-Ink{flex: 45px 0 0 !important; height: 40px !important; padding: 5px 5px !important; }
 .PSPDFKit-Icon-Signature{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
-.PSPDFKit-Icon-Image{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
+.PSPDFKit-Icon-Image{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 2px !important; }
 .PSPDFKit-Icon-Text{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
-.PSPDFKit-Icon-Line{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
+.PSPDFKit-Icon-Line{flex: 45px 0 0 !important; height: 42px !important; padding: 5px 5px !important; }
 /* .PSPDFKit-Tool-Button{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; } */
-.PSPDFKit-Icon-DocumentEditor{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 5px !important; }
+.PSPDFKit-Icon-DocumentEditor{flex: 45px 0 0 !important; height: 45px !important; padding: 5px 3px !important; }
