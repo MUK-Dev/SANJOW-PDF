@@ -16,8 +16,10 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@Fields": ["./components/Fields/index.ts"],
       "@Reuseables/*": ["./components/Reuseable/*"],
-      "@UI/*": ["./components/UI/*"]
+      "@UI/*": ["./components/UI/*"],
+      "@Utils": ["./utils/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

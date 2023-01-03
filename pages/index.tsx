@@ -9,9 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import React, {
-  ChangeEvent, FC, useRef, useState,
-} from 'react';
+import React, { ChangeEvent, FC, useRef, useState } from 'react';
 
 import FilledBtn from '@Reuseables/FilledBtn';
 import Footer from '@Reuseables/Footer';
@@ -90,15 +88,15 @@ const Home: FC<Props> = () => {
       />
       <Modal isOpen={showModal} onClose={() => setShowModal(false)} >
         <Box
-          onDragOver={(e) => {
+          onDragOver={e => {
             e.preventDefault();
             setHovering(true);
           }}
-          onDragLeave={(e) => {
+          onDragLeave={e => {
             e.preventDefault();
             setHovering(false);
           }}
-          onDrop={(e) => handleDrop(e as any)}
+          onDrop={e => handleDrop(e as any)}
           py="4rem"
           px="2em"
           border="2px solid rgba(127, 144, 187, 0.3)"
@@ -137,7 +135,7 @@ const Home: FC<Props> = () => {
             </Stack>
             <Input
               type="file"
-              onChange={(event) => {
+              onChange={event => {
                 handleChange?.(event);
               }}
               ref={pickerRef}
