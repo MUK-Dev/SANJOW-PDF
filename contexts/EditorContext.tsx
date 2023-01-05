@@ -13,6 +13,7 @@ import {
 
 export interface EditorContextProps {
   file?: undefined;
+  previewFile?: undefined;
   fName?: string;
   handleChange?: (e: any) => Promise<void>;
   showConvertModal?: boolean;
@@ -34,6 +35,7 @@ interface Props {
 export const EditorProvider: FC<Props> = ({ children }) => {
   const router = useRouter();
   const [file, setFile] = useState();
+  const [previewFile, setPreviewFile] = useState();
   const [fName, setFName] = useState('');
   const [showConvertModal, setShowConvertModal] = useState(false);
   const [radioVal, setRadioVal] = useState('none');
@@ -44,7 +46,9 @@ export const EditorProvider: FC<Props> = ({ children }) => {
     setFile(e.target.files[0]);
     setFName(e.target.files[0].name.split('.')[0]);
     const buffer = await e.target.files[0].arrayBuffer();
+    const previewBuffer = await e.target.files[0].arrayBuffer();
     setFile(buffer);
+    setPreviewFile(previewBuffer);
     await router.push('/editor');
   };
 
@@ -102,6 +106,7 @@ export const EditorProvider: FC<Props> = ({ children }) => {
     <EditorContext.Provider
       value={{
         file,
+        previewFile,
         fName,
         handleChange,
         showConvertModal,

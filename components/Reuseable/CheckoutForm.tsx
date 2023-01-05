@@ -70,20 +70,22 @@ const CheckoutForm = () => {
       <FilledBtn onClick={runDownload} disabled={isLoading}>
         {isLoading ? <Spinner /> : 'Get My Document'}
       </FilledBtn>
-      <Link href="/log-in" passHref>
-        <Text
-          href="/log-in"
-          fontSize="sm"
-          position="absolute"
-          top="-6rem"
-          left="6rem"
-          fontWeight={600}
-          textDecoration="underline"
-          cursor="pointer"
-        >
-          Sign in or continue as a guest below
-        </Text>
-      </Link>
+
+      <Text
+        fontSize="sm"
+        position="absolute"
+        top="-6rem"
+        left="6rem"
+        fontWeight={600}
+        cursor="pointer"
+      >
+        <Link href="/log-in" passHref>
+          <Text textDecoration="underline" display="inline">
+            Sign in
+          </Text>
+        </Link>{' '}
+        or continue as a guest below
+      </Text>
     </Stack>
   );
 };

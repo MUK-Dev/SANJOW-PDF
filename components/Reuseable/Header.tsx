@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Drawer,
   DrawerBody,
@@ -54,9 +55,15 @@ const Header: FC = () => {
     <Flex as="nav" p="1em" alignItems="center">
       <Image src="/assets/we-pdflogo.png" alt="logo" h="3rem" />
       <Spacer />
-      <Flex gap="2em" display={{ base: 'none', md: 'flex' }} alignItems='center' color='#FD900F' >
+      <Flex gap="2em" display={{ base: 'none', md: 'flex' }} alignItems='center' color='black' transition='all 0.4s ease' >
+        <Box  _hover={{color: '#FD900F' }}  transition='all 0.2s ease'>
+
         <Link href='/' >Home</Link>
+        </Box>
+        <Box  _hover={{color: '#FD900F' }}  transition='all 0.2s ease'>
+
         <Link href='/' >Contact</Link>
+        </Box>
         <OutlinedBtn onClick={() => router.push('/log-in')}>Login</OutlinedBtn>
         <Menu>
           <MenuButton

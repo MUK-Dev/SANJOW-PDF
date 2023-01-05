@@ -58,7 +58,6 @@ export default function App() {
         onPress: () => setShowConvertModal?.(true),
       };
       const defaultTools = PSPDFKit.defaultToolbarItems;
-      console.log(defaultTools);
       defaultTools[7].icon = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve">
    <polygon points="222.031,490 267.969,490 267.969,267.969 490,267.969 490,222.031 267.969,222.031 267.969,0 222.031,0 
@@ -114,6 +113,7 @@ export default function App() {
         }),
         container,
         document: file || '/pspdfkit-web-demo.pdf',
+        restrictAnnotationToPageBounds: false,
         baseUrl: `${window.location.protocol}//${window.location.host}/`,
         toolbarItems: [...defaultTools, item, {
           type: 'content-editor', className: 'edit-text', icon: `<svg width='100%' height='100%' viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +132,6 @@ export default function App() {
         }],
       }).then((newInstance: any) => {
         const items = newInstance.toolbarItems;
-        console.log(items);
         items.splice(11, 0, items[35]);
         items.pop();
         items.splice(12, 0, items[20]);
@@ -152,7 +151,8 @@ export default function App() {
         );
 
         setInstance?.(newInstance);
-      });
+        return newInstance;
+      }).catch((err:any)=>console.error(err));
     })();
 
     // return () => PSPDFKit && PSPDFKit.unload(container);

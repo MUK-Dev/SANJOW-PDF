@@ -5,13 +5,13 @@ import React from 'react';
 
 const CheckoutHero = () => (
   <Stack
-    py={{ base: '1em', md: '6em' }}
+    py={{ base: '1em', md: '8em' }}
     pb='15em !important'
     px={{ base: '1em', md: '5em' }}
     alignItems="center"
     gap="7em"
   >
-    <Stack alignItems="center" w="100%" gap='2em' >
+    {/* <Stack alignItems="center" w="100%" gap='2em' >
       <Heading>Breadcrumbs</Heading>
       <Flex w={{ base: '95%', md: '40%' }} alignItems="center">
         <Stack
@@ -53,7 +53,7 @@ const CheckoutHero = () => (
           </Text>
         </Stack>
       </Flex>
-    </Stack>
+    </Stack> */}
     <Heading>Last step before receiving your document</Heading>
   </Stack>
 );
