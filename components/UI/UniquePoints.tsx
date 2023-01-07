@@ -1,7 +1,7 @@
 import { Grid, GridItem, Heading, Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import Card from '../Card';
+import Card from '@Reuseables/Card';
 
 interface Props {
   showGradient?: boolean;

@@ -32,7 +32,7 @@ const Pricing: FC<Props> = ({ setShowModal }) => {
         bgColor="white"
         transform="translateY(-3rem)"
       >
-        <Heading>$39.95</Heading>
+        <Heading>$19.90</Heading>
         <Text>/month</Text>
         <FilledBtn
           onClick={setShowModal ? () => setShowModal(true) : scrollToTop}

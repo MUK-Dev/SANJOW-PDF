@@ -88,6 +88,10 @@ const Header: FC = () => {
               Your documents
             </MenuItem>
             <MenuItem>
+              <Image src="/assets/docs/doc.png" alt="doc" pr="0.5em" />
+              Unsubscribe
+            </MenuItem>
+            <MenuItem>
               <Image src="/assets/header/logout.png" alt="logout" pr="0.5em" />
               Logout
             </MenuItem>

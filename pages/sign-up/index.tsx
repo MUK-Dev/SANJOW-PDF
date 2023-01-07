@@ -1,9 +1,5 @@
 import {
-  Button,
-  Divider,
-  Flex,
   Heading,
-  Image,
   Input,
   Link,
   Stack,
@@ -40,31 +36,6 @@ const SignUp = () => {
             the best PDF solution on the market.
           </Text>
           <Stack gap="1em" py="0.5em">
-            <Button
-              w="100%"
-              gap="1em"
-              bg="transparent"
-              border="1px solid black"
-              _hover={{ bgColor: 'transparent !important' }}
-            >
-              <Image src="/assets/auth/google.png" alt="Google" w="20px" />
-              Sign in with Google
-            </Button>
-            <Button
-              w="100%"
-              gap="1em"
-              bg="transparent"
-              border="1px solid black"
-              _hover={{ bgColor: 'transparent !important' }}
-            >
-              <Image src="/assets/auth/facebook.png" alt="Facebook" w="20px" />
-              Sign in with Facebook
-            </Button>
-            <Flex alignItems="center" w="100%" gap="0.5em">
-              <Divider borderWidth={1} borderColor="black" flexGrow={1} />
-              <Text>OR</Text>
-              <Divider borderWidth={1} borderColor="black" flexGrow={1} />
-            </Flex>
             <Input variant="flushed" placeholder="Email" />
             <Input variant="flushed" placeholder="Password" />
           </Stack>

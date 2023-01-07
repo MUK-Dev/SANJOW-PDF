@@ -1,4 +1,5 @@
 import {
+  Checkbox,
   Flex,
   Heading,
   Image,
@@ -24,9 +25,18 @@ const CheckoutForm = () => {
       borderRadius={8}
       bgColor="white"
     >
-      <Heading fontSize="xl" pb="2em">
-        Card Details
-      </Heading>
+      <Heading fontSize="xl">Total: $0.99*</Heading>
+      <Text
+        fontSize="sm"
+        cursor="pointer"
+        fontStyle="italic"
+        color="#8C9BC2"
+        pb="1em"
+      >
+        <Link href="/log-in" passHref>
+          <Text>Already have an account?</Text>
+        </Link>
+      </Text>
       <Flex w="100%" justifyContent="space-between" alignItems="center">
         <Flex flexGrow={1} gap="1em" alignItems="center">
           <Text>Secure Payment</Text>
@@ -67,25 +77,16 @@ const CheckoutForm = () => {
         <Input placeholder="MM/AA" variant="outline" borderColor="#E2E8F0" />
         <Input placeholder="CVV" variant="outline" borderColor="#E2E8F0" />
       </Flex>
+      <Checkbox alignItems='flex-start' defaultChecked >
+        I have read and agree to the Terms and Conditions and the Privacy
+        Policy, and would like to subscribe for $19.90 every month after the 7
+        days trial. I would also like to proceed my document immediately. I
+        understand and accept that by requesting this, I will lose my right to
+        withdraw from this contract once the service has been fully performed.
+      </Checkbox>
       <FilledBtn onClick={runDownload} disabled={isLoading}>
         {isLoading ? <Spinner /> : 'Get My Document'}
       </FilledBtn>
-
-      <Text
-        fontSize="sm"
-        position="absolute"
-        top="-6rem"
-        left="6rem"
-        fontWeight={600}
-        cursor="pointer"
-      >
-        <Link href="/log-in" passHref>
-          <Text textDecoration="underline" display="inline">
-            Sign in
-          </Text>
-        </Link>{' '}
-        or continue as a guest below
-      </Text>
     </Stack>
   );
 };

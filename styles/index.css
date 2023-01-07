@@ -26,3 +26,8 @@ button:hover {
   background-color: #FD900F !important;
 
 }
+
+.css-xxkadm[data-checked]{
+  background: #7F90BB !important;
+  border-color: #7F90BB !important;
+}
