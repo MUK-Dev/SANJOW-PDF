@@ -73,7 +73,7 @@ const CheckoutForm = () => {
         variant="outline"
         borderColor="#E2E8F0"
       />
-      <Flex alignItems="center" gap="1em" pb="3em">
+      <Flex alignItems="center" gap="1em" pb="1em">
         <Input placeholder="MM/AA" variant="outline" borderColor="#E2E8F0" />
         <Input placeholder="CVV" variant="outline" borderColor="#E2E8F0" />
       </Flex>
@@ -84,7 +84,7 @@ const CheckoutForm = () => {
         understand and accept that by requesting this, I will lose my right to
         withdraw from this contract once the service has been fully performed.
       </Checkbox>
-      <FilledBtn onClick={runDownload} disabled={isLoading}>
+      <FilledBtn onClick={runDownload} disabled={isLoading} >
         {isLoading ? <Spinner /> : 'Get My Document'}
       </FilledBtn>
     </Stack>

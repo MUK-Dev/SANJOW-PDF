@@ -18,16 +18,19 @@ button:hover {
 }
 
 .bg-orange {
-
-  background-color: #FD900F !important;
+  background-color: #fd900f !important;
 }
 
 .PSPDFKit-Tool-Button {
-  background-color: #FD900F !important;
-
+  background-color: #fd900f !important;
 }
 
-.css-xxkadm[data-checked]{
-  background: #7F90BB !important;
-  border-color: #7F90BB !important;
+.css-xxkadm[data-checked] {
+  background: #7f90bb !important;
+  border-color: #7f90bb !important;
+}
+
+.css-1sgc0qu {
+  font-size: 12px !important;
+  margin-bottom: 1em;
 }

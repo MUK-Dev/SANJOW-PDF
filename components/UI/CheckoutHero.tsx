@@ -1,12 +1,12 @@
 import {
-  Divider, Flex, Heading, Stack, Text,
+  Heading, Stack
 } from '@chakra-ui/react';
 import React from 'react';
 
 const CheckoutHero = () => (
   <Stack
-    py={{ base: '1em', md: '8em' }}
-    pb='15em !important'
+    py={{ base: '0em', md: '8em' }}
+    pb={{base: '5em', md: '15em !important'}}
     px={{ base: '1em', md: '5em' }}
     alignItems="center"
     gap="7em"
@@ -54,7 +54,7 @@ const CheckoutHero = () => (
         </Stack>
       </Flex>
     </Stack> */}
-    <Heading>Last step before receiving your document</Heading>
+    <Heading textAlign='center' >Last step before receiving your document</Heading>
   </Stack>
 );
 

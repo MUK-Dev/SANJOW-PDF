@@ -42,6 +42,7 @@ const Header: FC = () => {
               Home
             </Button>
             <Button backgroundColor="transparent">Contact</Button>
+            <Button backgroundColor="transparent">Unsubscribe</Button>
             <OutlinedBtn onClick={() => router.push('/log-in')}>
               Login
             </OutlinedBtn>
@@ -55,21 +56,28 @@ const Header: FC = () => {
     <Flex as="nav" p="1em" alignItems="center">
       <Image src="/assets/we-pdflogo.png" alt="logo" h="3rem" />
       <Spacer />
-      <Flex gap="2em" display={{ base: 'none', md: 'flex' }} alignItems='center' color='black' transition='all 0.4s ease' >
-        <Box  _hover={{color: '#FD900F' }}  transition='all 0.2s ease'>
-
-        <Link href='/' >Home</Link>
+      <Flex
+        gap="2em"
+        display={{ base: 'none', md: 'flex' }}
+        alignItems="center"
+        color="black"
+        transition="all 0.4s ease"
+      >
+        <Box _hover={{ color: '#FD900F' }} transition="all 0.2s ease">
+          <Link href="/">Home</Link>
         </Box>
-        <Box  _hover={{color: '#FD900F' }}  transition='all 0.2s ease'>
-
-        <Link href='/' >Contact</Link>
+        <Box _hover={{ color: '#FD900F' }} transition="all 0.2s ease">
+          <Link href="/">Contact</Link>
+        </Box>
+        <Box _hover={{ color: '#FD900F' }} transition="all 0.2s ease">
+          <Link href="/">Unsubscribe</Link>
         </Box>
         <OutlinedBtn onClick={() => router.push('/log-in')}>Login</OutlinedBtn>
         <Menu>
           <MenuButton
             px="2em"
             borderRadius="0.375rem"
-            color='black'
+            color="black"
             _hover={{
               borderColor: '#e3830e',
               color: '#e3830e',
@@ -78,7 +86,7 @@ const Header: FC = () => {
           >
             Oliver L.
           </MenuButton>
-          <MenuList color='black'>
+          <MenuList color="black">
             <MenuItem>
               <Image src="/assets/header/avatar.png" alt="avatar" pr="0.5em" />
               Profile
@@ -86,10 +94,6 @@ const Header: FC = () => {
             <MenuItem>
               <Image src="/assets/docs/doc.png" alt="doc" pr="0.5em" />
               Your documents
-            </MenuItem>
-            <MenuItem>
-              <Image src="/assets/docs/doc.png" alt="doc" pr="0.5em" />
-              Unsubscribe
             </MenuItem>
             <MenuItem>
               <Image src="/assets/header/logout.png" alt="logout" pr="0.5em" />
