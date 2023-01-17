@@ -61,6 +61,7 @@ const Reassurance: FC<Props> = ({ className = 'bg-gradient-to-right' }) => {
       px={{ base: '1em', md: '5em' }}
       pb={{ base: '3em', md: '2em' }}
       className={className}
+      bgColor='white'
     >
       <style>{`
         .dot {

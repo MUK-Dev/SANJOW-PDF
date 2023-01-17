@@ -10,6 +10,7 @@ const CheckoutSection: FC = () => (
     px={{ base: '1em', md: '6em' }}
     gap="4em"
     transform="translateY(-4rem)"
+    bgColor='white'
   >
     <GridItem>
       <CheckoutForm />

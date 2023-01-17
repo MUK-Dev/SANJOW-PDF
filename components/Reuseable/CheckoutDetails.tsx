@@ -14,7 +14,7 @@ import useEditor from 'hooks/useEditor';
 const CheckoutDetails = () => {
   const containerRef = useRef(null);
   const router = useRouter();
-  const { previewFile, fName } = useEditor();
+  const { previewFile, fName} = useEditor();
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
@@ -23,14 +23,17 @@ const CheckoutDetails = () => {
       return;
     }
 
+    console.log(previewFile);
+    
+
     const container = containerRef.current;
     let PSPDFKit: any;
     (async () => {
       PSPDFKit = await import('pspdfkit');
 
-      //   if (PSPDFKit) {
-      //     PSPDFKit.unload(container);
-      //   }
+        if (PSPDFKit) {
+          PSPDFKit.unload(container);
+        }
       const initialViewState = new PSPDFKit.ViewState({
         readOnly: true,
       });
@@ -49,7 +52,7 @@ const CheckoutDetails = () => {
       }
     })();
 
-    // return () => PSPDFKit && PSPDFKit.unload(container);
+    return () => PSPDFKit && PSPDFKit.unload(container);
   }, [previewFile, router]);
 
   return (

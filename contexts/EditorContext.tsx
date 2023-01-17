@@ -1,13 +1,18 @@
 /* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable no-unused-vars */
+import { useMediaQuery } from '@chakra-ui/react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { ToolbarItem } from 'pspdfkit';
 import {
   createContext,
   Dispatch,
   FC,
+  MutableRefObject,
   ReactNode,
   SetStateAction,
+  useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -23,7 +28,13 @@ export interface EditorContextProps {
   instance?: any;
   setInstance?: Dispatch<SetStateAction<null>>;
   runDownload?: () => Promise<void>;
+  preparePreview?: () => void;
   isLoading?: boolean;
+  setFile?: Dispatch<SetStateAction<undefined>>;
+  containerRef?: MutableRefObject<null>;
+  setPreviewFile?: Dispatch<SetStateAction<undefined>>;
+  showCheckout?: boolean;
+  setShowCheckout?: Dispatch<SetStateAction<boolean>>;
 }
 
 const EditorContext = createContext<EditorContextProps>({});
@@ -41,6 +52,7 @@ export const EditorProvider: FC<Props> = ({ children }) => {
   const [radioVal, setRadioVal] = useState('none');
   const [instance, setInstance] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [showCheckout, setShowCheckout] = useState(false);
 
   const handleChange = async (e: any) => {
     setFile(e.target.files[0]);
@@ -102,6 +114,16 @@ export const EditorProvider: FC<Props> = ({ children }) => {
     });
   };
 
+  const preparePreview = ()=>{
+    if (!instance) return;
+    setIsLoading(true);
+    instance.exportPDF().then((buffer: any) => {
+      setPreviewFile(buffer);
+      setShowCheckout(true);
+      setIsLoading(false);
+    });
+  };
+
   return (
     <EditorContext.Provider
       value={{
@@ -117,6 +139,11 @@ export const EditorProvider: FC<Props> = ({ children }) => {
         setInstance,
         runDownload,
         isLoading,
+        setFile,
+        setPreviewFile,
+        showCheckout,
+        setShowCheckout,
+        preparePreview
       }}
     >
       <a style={{ display: 'none' }} id="hidd-down" />
