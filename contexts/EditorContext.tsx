@@ -35,6 +35,8 @@ export interface EditorContextProps {
   setPreviewFile?: Dispatch<SetStateAction<undefined>>;
   showCheckout?: boolean;
   setShowCheckout?: Dispatch<SetStateAction<boolean>>;
+  shouldRedirect?: boolean;
+  setShouldRedirect?: Dispatch<SetStateAction<boolean>>;
 }
 
 const EditorContext = createContext<EditorContextProps>({});
@@ -53,6 +55,7 @@ export const EditorProvider: FC<Props> = ({ children }) => {
   const [instance, setInstance] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
+  const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const handleChange = async (e: any) => {
     setFile(e.target.files[0]);
@@ -65,6 +68,7 @@ export const EditorProvider: FC<Props> = ({ children }) => {
   };
 
   const convertFunc = async (fileData: any, fileType: string) => {
+    setShouldRedirect(true);
     try {
       const res = await axios.post(
         'https://simplified-pdf.uc.r.appspot.com/api/convert-file',
@@ -143,7 +147,9 @@ export const EditorProvider: FC<Props> = ({ children }) => {
         setPreviewFile,
         showCheckout,
         setShowCheckout,
-        preparePreview
+        preparePreview,
+        setShouldRedirect,
+        shouldRedirect
       }}
     >
       <a style={{ display: 'none' }} id="hidd-down" />

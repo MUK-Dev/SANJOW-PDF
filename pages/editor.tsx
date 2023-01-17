@@ -40,6 +40,8 @@ export default function App() {
     showCheckout,
     preparePreview,
     setShowCheckout,
+    shouldRedirect,
+    setShouldRedirect
   } = useEditor();
 
   // prompt the user if they try and leave with unsaved changes
@@ -55,21 +57,31 @@ export default function App() {
       router.events.emit('routeChangeError');
       throw 'routeChange aborted.';
     };
-    window.addEventListener('beforeunload', handleWindowClose);
-    router.events.on('routeChangeStart', handleBrowseAway);
+    if(shouldRedirect){
+      console.log('removing listeners');
+      window.removeEventListener('beforeunload', handleWindowClose);
+      router.events.off('routeChangeStart', handleBrowseAway); 
+    }else{
+
+      window.addEventListener('beforeunload', handleWindowClose);
+      router.events.on('routeChangeStart', handleBrowseAway);
+    }
     return () => {
       window.removeEventListener('beforeunload', handleWindowClose);
       router.events.off('routeChangeStart', handleBrowseAway);
     };
-  }, []);
+  }, [shouldRedirect]);
 
   useEffect(() => {
     setShowCheckout?.(false);
     setShowConvertModal?.(false);
+    
     if (!file) {
       router.push('/');
       return;
     }
+
+    setShouldRedirect?.(false);
 
     const container = containerRef.current;
     let PSPDFKit: any;
