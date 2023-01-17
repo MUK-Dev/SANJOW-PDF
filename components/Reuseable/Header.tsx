@@ -15,6 +15,7 @@ import {
   Spacer,
   Stack,
   useDisclosure,
+  Link as ChakraLink,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -42,7 +43,25 @@ const Header: FC = () => {
               Home
             </Button>
             <Button backgroundColor="transparent">Contact</Button>
-            <Button backgroundColor="transparent">Unsubscribe</Button>
+            <Box
+              _hover={{ color: '#FD900F' }}
+              transition="all 0.2s ease"
+              w="100%"
+              display="flex"
+              alignItems="center"
+              marginTop='0.5rem'
+              >
+              <ChakraLink
+                href="mailto:contact@we-pdf.com"
+                _hover={{ textDecoration: 'none' }}
+                fontWeight={600}
+                py='0.5em'
+                w='100%'
+                textAlign='center'
+              >
+                Unsubscribe
+              </ChakraLink>
+            </Box>
             <OutlinedBtn onClick={() => router.push('/log-in')}>
               Login
             </OutlinedBtn>
@@ -70,7 +89,12 @@ const Header: FC = () => {
           <Link href="/">Contact</Link>
         </Box>
         <Box _hover={{ color: '#FD900F' }} transition="all 0.2s ease">
-          <Link href="/">Unsubscribe</Link>
+          <ChakraLink
+            href="mailto:contact@we-pdf.com"
+            _hover={{ textDecoration: 'none' }}
+          >
+            Unsubscribe
+          </ChakraLink>
         </Box>
         <OutlinedBtn onClick={() => router.push('/log-in')}>Login</OutlinedBtn>
         <Menu>

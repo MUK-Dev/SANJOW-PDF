@@ -23,9 +23,6 @@ const CheckoutDetails = () => {
       return;
     }
 
-    console.log(previewFile);
-    
-
     const container = containerRef.current;
     let PSPDFKit: any;
     (async () => {

@@ -8,20 +8,16 @@ import CheckoutHero from '@UI/CheckoutHero';
 import CheckoutSection from '@UI/CheckoutSection';
 import Reassurance from '@UI/Reassurance';
 
-const Checkout = () => {
-    const router = useRouter();
-
-    return (
-        <Box w='100%' minH='100%' position='absolute' bgColor='white' top={0} left={0} >
-            <Box className="bg-gradient-to-right">
-                <Header />
-                <CheckoutHero />
-            </Box>
-            <CheckoutSection />
-            <Reassurance className='' />
-            <Footer quote={<></>} />
+const Checkout = () => (
+    <Box w='100%' minH='100%' position='absolute' bgColor='white' top={0} left={0}>
+        <Box className="bg-gradient-to-right">
+            <Header />
+            <CheckoutHero />
         </Box>
-    );
-};
+        <CheckoutSection />
+        <Reassurance className='' />
+        <Footer quote={<></>} />
+    </Box>
+);
 
 export default Checkout;
