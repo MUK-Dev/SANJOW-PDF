@@ -1,6 +1,4 @@
-import {
-  Grid, GridItem, Heading, Image, Stack, Text,
-} from '@chakra-ui/react';
+import { Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 const EditAndConvert: FC = () => (
@@ -40,11 +38,11 @@ const EditAndConvert: FC = () => (
           Easy-to-use web app
         </Heading>
         <Text>
-          We're The Pdf Converter, and our mission is to make technology easy
-          and accessible for everyone. We believe that our customers' needs
-          should be the driving force behind everything we do. That's why we've
-          made it our mission to provide the best possible experience for all of
-          our users—whether they're a small business owner, an academic
+          We're We PDF, and our mission is to make technology easy and
+          accessible for everyone. We believe that our customers' needs should
+          be the driving force behind everything we do. That's why we've made it
+          our mission to provide the best possible experience for all of our
+          users—whether they're a small business owner, an academic
           professional, or just someone who needs help managing their own
           personal documents. If you need something done with your PDFs, we want
           to be there for you!
