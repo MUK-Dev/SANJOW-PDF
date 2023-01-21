@@ -38,13 +38,13 @@ const Footer: FC<Props> = ({ quote }) => {
         direction={{ base: 'column', md: 'row' }}
         gap="1em"
       >
-        <Image src='/assets/we-pdflogo.png' alt='logo' h='3rem' />
+        <Image src="/assets/we-pdflogo.png" alt="logo" h="3rem" />
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
           <Heading size="md">Quick Links</Heading>
           <Link href="/">Home</Link>
           <Link href="mailto:contact@we-pdf.com">Contact</Link>
-          <Link href="#">Pricing</Link>
+          <Link href="#pricing">Pricing</Link>
         </Stack>
         <Spacer />
         <Stack alignItems={{ base: 'center', md: 'flex-start' }}>
@@ -61,7 +61,7 @@ const Footer: FC<Props> = ({ quote }) => {
           <Text>contact@we-pdf.com</Text>
         </Stack>
         <Spacer />
-        <OutlinedBtn onClick={() => router.push('/log-in')} >Log In</OutlinedBtn>
+        <OutlinedBtn onClick={() => router.push('/log-in')}>Log In</OutlinedBtn>
       </Flex>
       <Divider borderWidth={1} borderColor="#D9D9D9" />
       <Flex

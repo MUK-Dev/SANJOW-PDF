@@ -22,7 +22,7 @@ const Pricing: FC<Props> = ({ setShowModal }) => {
   };
 
   return (
-    <Stack w="100%" alignItems="center">
+    <Stack w="100%" alignItems="center" id="pricing">
       <Stack
         boxShadow="0 4px 12px rgba(0,0,0,0.25)"
         py="3em"
@@ -36,7 +36,9 @@ const Pricing: FC<Props> = ({ setShowModal }) => {
         <Text>/month</Text>
         <FilledBtn
           onClick={setShowModal ? () => setShowModal(true) : scrollToTop}
-        >Start Now</FilledBtn>
+        >
+          Start Now
+        </FilledBtn>
         <Heading fontSize="md">7-day trial for only $0.99</Heading>
         <UnorderedList>
           <ListItem>Editing and convert</ListItem>

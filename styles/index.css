@@ -4,6 +4,8 @@ body {
 
 * {
   font-family: 'Nunito', sans-serif !important;
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
 }
 
 button:hover {
